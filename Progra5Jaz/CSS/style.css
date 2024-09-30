@@ -1,0 +1,251 @@
+﻿.card-img-top {
+    width: 330px;
+    height: 250px;
+    margin: auto;
+}
+
+.container {
+    gap: 5px;
+    width: 100%;
+}
+
+.LOGO {
+    width: 190px;
+    height: 190px;
+}
+
+body {
+    background-color: black;
+}
+
+.jumbotron {
+    background-color: rgb(240, 231, 203);
+    height: 8%;
+}
+
+.row {
+    gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    transition: all 1s ease;
+    width: 330px;
+    height: 300px;
+    border: 1px #f1a204 solid;
+}
+
+.jumbotron {
+    background-color: rgb(240, 231, 203);
+    height: 4%;
+}
+
+.card:hover {
+    scale: 1.03;
+    transition: all 1s ease;
+}
+
+.jumbotron {
+    padding: 5px 0; /* Ajusta el padding superior e inferior */
+}
+
+
+.contlog {
+    margin: auto;
+    width: 40%;
+    min-width: 500px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.btn-carrito img {
+    width: 50px;
+    height: auto;
+}
+
+.btn-carrito {
+    padding: 5px;
+}
+
+
+.neon-effect {
+    color: rgb(12, 11, 11);
+    font-size: 22px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    text-decoration-line: none;
+}
+
+    .neon-effect:hover {
+        background-color: #0c0c0c;
+        color: rgb(5, 5, 5);
+        text-shadow: 0 0 5px #77530a, 0 0 10px #8f630b, 0 0 20px rgb(196, 144, 12), 0 0 40px #252421, 0 0 80px rgb(214, 190, 52);
+        border-color: #ffd277;
+        text-decoration-line: none;
+        scale: 1.1;
+    }
+
+.Dorado {
+    border: 2px solid black;
+    border-radius: 10px;
+    background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+    background-size: 250%;
+    background-position: left;
+    color: #0c0c0c;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition-duration: 1s;
+    text-decoration: none;
+}
+
+/*boton*/
+.footer {
+    border: 2px solid black;
+    border-radius: 10px;
+    background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+    background-size: 250%;
+    background-position: left;
+    color: #0c0c0c;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition-duration: 1s;
+    bottom: 0px;
+    position: fixed;
+}
+
+
+    .footer:hover {
+        background-position: right;
+    }
+
+.Dorado::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.842);
+    background-size: 200%;
+    transition-duration: 1s;
+    z-index: -1;
+    }
+
+a {
+    text-decoration: none;
+    width:90px
+}
+
+.Dorado:hover {
+    background-position: right;
+    text-decoration: none;
+    color: black;
+}
+
+#1:hover::after {
+    background-position: right;
+}
+
+#1:active {
+    transform: scale(0.95);
+}
+/*boton*/
+
+/*Letras*/
+.DoradoL {
+    font-size: 24px;
+    font-weight: bold; /* Negrita para mejor visibilidad */
+    background: linear-gradient(to right, #c88b0f, #ffd277, #77530a, #ad7b17, #ffd277, #875f0f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; /* Hace el texto transparente para que el fondo lo rellene */
+    background-size: 200%;
+    transition: background-position 1s ease;
+}
+
+    .DoradoL:hover {
+        background-position: right; /* Desplaza el degradado para el efecto de brillo al hacer hover */
+    }
+/*Letras*/
+
+.Formulario {
+    background-color: #dee2e6;
+}
+
+.ContentForm {
+    padding: 5%;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.transparente {
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de transparencia */
+    color: rgb(201, 193, 165);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+/*lista*/
+ul.inactive {
+    display: none; /* Oculta el submenú */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding-left: 20px;
+    list-style: none;
+}
+
+/* Al pasar el mouse sobre el enlace principal, se activa el submenú */
+li.nav-item:hover ul.inactive {
+    display: block; /* Muestra el submenú */
+    opacity: 1; /* Hace el submenú visible */
+}
+
+ul.inactive li a {
+    text-decoration: none;
+    color: #f6e5b1;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+ul.inactive li :hover {
+    background-color: #f3e9ca;
+    color: #0c0c0c;
+}
+
+/* Estilo del enlace principal */
+a.neon-effect.Dorado {
+    text-decoration: none;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.imacentrada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centra el texto dentro del div */
+    margin-bottom: 30px; /* Espacio entre secciones */
+}
