@@ -90,24 +90,17 @@ namespace Progra5Jaz.Models
                 command.Parameters.AddWithValue("@Correo", Correo);
                 command.Parameters.AddWithValue("@Contrasena", Contrasena);
 
-                // Ejecutar la consulta
-                command.ExecuteNonQuery();
-
-                int count = (int)command.ExecuteScalar();  
-
-                CerrarConex(); 
-
-                if( count > 0)
+                object result = command.ExecuteScalar();
+                CerrarConex();
+                if (result != null)
                 {
                     return true;
-                }
-                else
-                {
-                    return false;
+                 }
                 }
 
-            }
+                return false;
 
+            
         }
 
 
