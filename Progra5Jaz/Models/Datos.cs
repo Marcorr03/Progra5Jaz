@@ -17,7 +17,7 @@ namespace Progra5Jaz.Models
     {
         SqlConnection conexion;
 
-        string stringConexion = "Data Source=DESKTOP-3G9V4FR;Initial Catalog=ProyprogJaz;Integrated Security=True;";
+        string stringConexion = "Data Source=tiusr21pl.cuc-carrera-ti.ac.cr\\MSSQLSERVER2019;Initial Catalog=ProyprogJaz;User ID=Jaz;Password=progra123;";
 
 
         public void AbrirConex()
