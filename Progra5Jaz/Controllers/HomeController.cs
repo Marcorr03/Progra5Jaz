@@ -10,6 +10,8 @@ namespace Progra5Jaz.Controllers
     public class HomeController : Controller
     {
         Datos datos=new Datos();
+
+
         // GET: Home
         public ActionResult Index()
         {
@@ -32,14 +34,82 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
-
+        //Menu
         public ActionResult Menu()
         {
+
+            return View();
+        }
+
+        //Promos
+        public ActionResult PromosCli()
+        {
+
+            return View();
+        }
+
+        public ActionResult PromosAdm()
+        {
+
+            return View();
+        }
+
+        //Actividades
+        public ActionResult ActividadesCli()
+        {
+
+            return View();
+        }
+
+        public ActionResult ActividadesAdm()
+        {
+
+            return View();
+        }
+
+        //SPA
+        public ActionResult SpaCli()
+        {
+
+            return View();
+        }
+
+        public ActionResult SpaAdm()
+        {
+
             return View();
         }
 
 
 
+        //ManiPedi
+        public ActionResult ManPedCli()
+        {
+
+            return View();
+        }
+
+        public ActionResult ManPedAdm()
+        {
+
+            return View();
+        }
+
+        //Estetica
+        public ActionResult EsteticaCli()
+        {
+
+            return View();
+        }
+
+        public ActionResult EsteticaAdm()
+        {
+
+            return View();
+        }
+
+
+        //Registro
         public ActionResult Registro()
         {
             if (Request.Form.AllKeys.Contains("Enviar")) { 
@@ -50,6 +120,37 @@ namespace Progra5Jaz.Controllers
                 string Contrasena = Request.Form["Contrasena"];
 
                 datos.Registrar( Ide,  Nombre,  Correo,  Telefono,  Contrasena);
+            }
+            return View();
+        }
+
+
+        public ActionResult RegistroAdm()
+        {
+            if (Request.Form.AllKeys.Contains("Enviar"))
+            {
+                //string Ide = Request.Form["Identificacion"];
+                //string Nombre = Request.Form["Nombre"];
+                //string Correo = Request.Form["Correo"];
+                //string Telefono = Request.Form["Telefono"];
+                //string Contrasena = Request.Form["Contrasena"];
+
+                //datos.Registrar(Ide, Nombre, Correo, Telefono, Contrasena);
+            }
+            return View();
+        }
+
+        public ActionResult RegistroSup()
+        {
+            if (Request.Form.AllKeys.Contains("Enviar"))
+            {
+                //string Ide = Request.Form["Identificacion"];
+                //string Nombre = Request.Form["Nombre"];
+               //string Correo = Request.Form["Correo"];
+                //string Telefono = Request.Form["Telefono"];
+                //string Contrasena = Request.Form["Contrasena"];
+
+                //datos.Registrar(Ide, Nombre, Correo, Telefono, Contrasena);
             }
             return View();
         }

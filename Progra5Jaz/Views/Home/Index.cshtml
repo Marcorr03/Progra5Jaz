@@ -48,6 +48,11 @@
         <form class="Contactenos" method="post" action="~/Home/Index">
             <div class="container mt-5 transparente " style=" width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);">
                 <h2 class="text-center mb-4">Inicio Sesión</h2>
+                <input style="width:20px;" list="options" id="comboBox" class="combo-box" placeholder="Type or select...">
+                <datalist id="options">
+                    <option value="Administrador">
+                    <option value="Supervisor">
+                </datalist>
 
 
                 <div class="mb-3">
@@ -69,7 +74,6 @@
                     <a href="~/Home/Registro" class="Dorado">Registrar</a>
                     <button class="Dorado" name="Ingresar" value="Ingresar">Ingresar</button>
                 </div>
-
             </div>
         </form>
     </div>

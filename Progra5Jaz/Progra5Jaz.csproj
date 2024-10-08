@@ -117,6 +117,18 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\Home\Registro.cshtml" />
+    <Content Include="Views\Home\PromosCli.cshtml" />
+    <Content Include="Views\Home\PromosAdm.cshtml" />
+    <Content Include="Views\Home\RegistroAdm.cshtml" />
+    <Content Include="Views\Home\RegistroSup.cshtml" />
+    <Content Include="Views\Home\ActividadesCli.cshtml" />
+    <Content Include="Views\Home\ActividadesAdm.cshtml" />
+    <Content Include="Views\Home\SpaCli.cshtml" />
+    <Content Include="Views\Home\SpaAdm.cshtml" />
+    <Content Include="Views\Home\ManPedCli.cshtml" />
+    <Content Include="Views\Home\ManPedAdm.cshtml" />
+    <Content Include="Views\Home\EsteticaCli.cshtml" />
+    <Content Include="Views\Home\EsteticaAdm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

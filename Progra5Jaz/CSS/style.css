@@ -48,8 +48,12 @@ body {
 .card {
     transition: all 1s ease;
     width: 330px;
-    height: 300px;
+    height: 430px;
     border: 1px #f1a204 solid;
+}
+
+.card-body p {
+    font-size:10px
 }
 
 .jumbotron {
