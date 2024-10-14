@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Data;
 @{
     Layout = null;
 }
@@ -55,42 +55,38 @@
         <h1 class="display-4 " style="font-family: 'Lobster', cursive; ">Bienvenido a Luxury Dreams</h1>
         <p class="lead DoradoL" style="font-size: 22px;">Un lugar para relajarte y llenarte de vida y salud.</p>
         <hr class="my-4">
-    </div>
-
-    <!-- Grid de contenido -->
+    </div> 
     <div class="container">
         <p class="card-title DoradoL" style="font-size: 30px; text-align: center;">ACTIVIDADES</p>
+        <!-- Grid de contenido -->
         <div class="row">
-            <div class="card">
-                <img src="~/IMG/spapareja.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div style="">
-                        <h5 class="card-title">SPA PAREJAS</h5>
-                        <p>Disfruta con tu pareja un momento especial!!</p>
-                        <p>Min de personas: 2</p>
-                        <h6>Precio: 12000/p</h6>
-                        <div style=" display:flex;">
-                            <img src="~/IMG/agen.png" class="agregar" alt="">
+            @if (ViewBag.Actividades != null)
+            {
+                foreach (DataRow row in ViewBag.Actividades.Rows)
+                {
+                        <div class="card">
+                            <img src="@row["ImagenDataUrl"]" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div style="">
+                                    <h5 class="card-title">@row["Actividad"]</h5>
+                                    <p>@row["Descripcion"]</p>
+                                    <p>Min de personas: @row["CantPersonas"]</p>
+                                    <h6>Precio: @row["Precio"]/p</h6>
+                                    <div style=" display:flex;">
+                                        <img src="~/IMG/agen.png" class="agregar" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                }
+            }
+            else
+            {
+                <p>No hay actividades</p>
+            }
                 </div>
-            </div>
-            <div class="card">
-                <img src="~/IMG/spa.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div style="">
-                        <h5 class="card-title">SPA GROUPS</h5>
-                        <p>Disfruta con amigos, familia u otros!!</p>
-                        <p>Min de personas: 5</p>
-                        <h6>Precio: 10000/p</h6>
-                        <div style=" display:flex;">
-                            <img src="~/IMG/agen.png" class="agregar" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
+
     <br />
     <br />
     <br />

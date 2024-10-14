@@ -4,7 +4,8 @@
 }
 
 <!DOCTYPE html>
-<html lang="es">
+
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,18 +27,18 @@
             <ul class="navbar-nav">
                 <div style="padding-bottom:30px ;">
                 <li class="nav-item">
-                    <a class="neon-effect Dorado" href="menu.html">Home</a>
+                    <a class="neon-effect Dorado" href="~/Home/Menu">Home</a>
                 </li>
         </div>
         <div>
             <li class="nav-item">
-                <a class="neon-effect Dorado " href="nosotros.html">Sobre Nosotros</a>
+                <a class="neon-effect Dorado "   href="~/Home/Nosotros">Sobre Nosotros</a>
             </li>
         </div>
         <div>
             <li class="nav-item">
-                <a class="neon-effect Dorado" href="">Servicios</a>
-                <ul class="inactive"><li><a href="">SPA</a></li> <li><a href="">ESTETICA</a></li><li><a href="">MANICURE & PEDICURE</a></li></ul>
+                <a class="neon-effect Dorado" >Servicios</a>
+                <ul class="inactive"><li><a  href="~/Home/SpaCli">SPA</a></li> <li><a href="~/Home/EsteticaCli">ESTETICA</a></li><li><a href="~/Home/ManPedCli">MANICURE & PEDICURE</a></li></ul>
             </li>
         </div>
         <div>
@@ -48,12 +49,12 @@
         </div>
         <div>
             <li class="nav-item">
-                <a class="neon-effect Dorado" href="registro.html">Registro</a>
+                <a class="neon-effect Dorado" href="~/Home/Registro">Registro</a>
             </li>
         </div>
         <div>
             <li class="nav-item"></li>
-            <a class="neon-effect Dorado" href="contactenos.html">Contactenos</a>
+            <a class="neon-effect Dorado" href="~/Home/Contactenos">Contactenos</a>
             </li>
         </div>
         </ul>
@@ -74,41 +75,26 @@
     <div>
         <img src="~/IMA/spa2.jpg" alt="">
         <!-- FORM -->
-        <form class="Contactenos" method="post" action="~/Home/Registro">
+        <form class="Contactenos" method="post" action="~/Home/Contactenos" enctype="multipart/form-data">
             <div class="container mt-5 transparente " style=" width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);">
-                <h2 class="text-center mb-4">Registro</h2>
+                <h2 class="text-center mb-4">Gestion Actividades</h2>
 
                 <div class="mb-3">
-                    <label for="Identificacion" class="form-label">Identificacion</label>
-                    <input type="text" class="form-control" id="Identificacion" name="Identificacion" placeholder="301230567" required>
+                    <label for="Correo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="Correo" name="Correo" placeholder="usuario@gmail.com" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre completo</label>
-                    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Ingresa tu nombre" required>
+                    <label for="Mensaje" class="form-label">Mensaje</label>
+                    <input type="text" class="form-control" id="Mensaje" name="Mensaje" placeholder=" " required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="telefono" class="form-label">Fecha Nacimiento</label>
-                    <input type="date" class="form-control" id="FechaNa" name="FechaNa" placeholder="05/12/1999" required>
+                <br />
+                <br />
+                <br />
+                <div style="display:flex">
+                    <button type="submit" class="Dorado" name="Registrar" value="Registrar">Enviar</button>
                 </div>
-
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="Correo" name="Correo" placeholder="nombre@ejemplo.com" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="telefono" class="form-label">Número de teléfono</label>
-                    <input type="tel" class="form-control" id="Telefono" name="Telefono" placeholder="85678900" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="mensaje" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="Contrasena" name="Contrasena" rows="4" placeholder="Escribe tu contraseña" required>
-                </div>
-
-                <button type="submit" class="Dorado" name="Enviar" value="Enviar">Enviar</button>
             </div>
             <div class="Tabla">
                 <table>
@@ -120,7 +106,7 @@
 
     <!-- Footer -->
     <footer class="text-center mt-4 Dorado">
-        <p style="padding-bottom: 0%;">&copy; 2024 Crepitas. Desarrollado por Jazmin Masis V. Todos los derechos reservados.</p>
+        <p style="padding-bottom: 0%;">&copy; 2024 Luxury Dreams. Desarrollado por Jazmin Masis V. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Enlace a Bootstrap JS y dependencias de JavaScript -->
@@ -128,4 +114,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

@@ -7,10 +7,156 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>PromosAdm</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Dreams</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/CSS/style.css">
 </head>
 <body>
-    
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
+        <img class="LOGO" src="~/IMG/logo.jpeg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style="position: static;">
+            <ul class="navbar-nav">
+                <div style="padding-bottom:30px ;">
+                <li class="nav-item">
+                    <a class="neon-effect Dorado" href="menu.html">Home</a>
+                </li>
+        </div>
+        <div>
+            <li class="nav-item">
+                <a class="neon-effect Dorado " href="nosotros.html">Sobre Nosotros</a>
+            </li>
+        </div>
+        <div>
+            <li class="nav-item">
+                <a class="neon-effect Dorado" href="">Servicios</a>
+                <ul class="inactive"><li><a href="">SPA</a></li> <li><a href="">ESTETICA</a></li><li><a href="">MANICURE & PEDICURE</a></li></ul>
+            </li>
+        </div>
+        <div>
+            <li class="nav-item">
+                <a class="neon-effect Dorado" href="">Reservas</a>
+                <ul class="inactive"><li><a href="">SPA</a></li> <li><a href="">ESTETICA</a></li><li><a href="">MANICURE & PEDICURE</a></li></ul>
+            </li>
+        </div>
+        <div>
+            <li class="nav-item">
+                <a class="neon-effect Dorado" href="registro.html">Registro</a>
+            </li>
+        </div>
+        <div>
+            <li class="nav-item"></li>
+            <a class="neon-effect Dorado" href="contactenos.html">Contactenos</a>
+            </li>
+        </div>
+        </ul>
+        </div>
+        <div>
+            <a href="#" class="btn btn-carrito"><img src="~/IMG/NOTIFI.png" alt=""></a>
+            <a href="#" class="btn btn-carrito"><img src="~/IMG/VIP (2).png" alt=""></a>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <div class="jumbotron  text-center height=10px ">
+        <h1 class="display-4 " style="font-style: 'Lobster', cursive; ">Bienvenido a Luxury Dreams</h1>
+        <p class="lead DoradoL" style="font-size: 22px;">Un lugar para relajarte y llenarte de vida y salud.</p>
+        <hr class="my-4">
+    </div>
+
+    <div>
+        <img src="~/IMA/spa2.jpg" alt="">
+        <!-- FORM -->
+        <form class="Contactenos" method="post" action="~/Home/ActividadesAdm" enctype="multipart/form-data">
+            <div class="container mt-5 transparente " style=" width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);">
+                <h2 class="text-center mb-4">Gestion Promos</h2>
+
+                <div class="mb-3">
+                    <label for="Nombre" class="form-label">Nombre Promoción</label>
+                    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Spa" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Centro de masajes" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Precio por Persona</label>
+                    <input type="text" class="form-control" id="Precio" name="Precio" placeholder="6000" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Imagen</label>
+                    <input type="file" class="form-control" id="picture" accept="image/*" name="picture" placeholder="85678900" required>
+                </div>
+
+                <div id="imagen" class="mb-4">
+                    <img alt="No a seleccionado" name="img" id="img" />
+                </div>
+                <script>
+
+                    // Crear contenedor para la imagen y el botón
+                    document.getElementById('picture').addEventListener('change', function (event) {
+                        var file = event.target.files[0];
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            // Crear la imagen
+
+                            var img = document.getElementById('img');
+                            img.src = e.target.result;
+                            img.value = e.target.result.toString();
+                            img.style.width = '100%';
+
+                            // Añadir la imagen y el botón al contenedor
+                            document.getElementById('imagen').innerHTML = '';
+                            document.getElementById('imagen').appendChild(img);
+
+                            if (document.getElementById('imagen').childElementCount == 0) {
+                                document.getElementById('imagen').style.display = 'none';
+                            } else {
+                                document.getElementById('imagen').style.display = 'block';
+                            }
+                        };
+                        if (file) {
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
+                <br />
+                <div style="display:flex">
+                    <button type="submit" class="Dorado" name="Registrar" value="Registrar">Registrar</button>
+                    <button type="submit" class="Dorado" name="Modificar" value="Modificar">Modificar</button>
+                    <button type="submit" class="Dorado" name="Eliminar" value="Eliminar">Eliminar</button>
+                    <button type="submit" class="Dorado" name="Buscar" value="Buscar">Buscar</button>
+                </div>
+            </div>
+            <div class="Tabla">
+                <table>
+                </table>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4 Dorado">
+        <p style="padding-bottom: 0%;">&copy; 2024 Luxury Dreams. Desarrollado por Jazmin Masis V. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlace a Bootstrap JS y dependencias de JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -47,40 +47,50 @@ namespace Progra5Jaz.Models
             }
         }
 
-        public void Registrar(string Ide, string Nombre, string Correo, string Telefono, string Contrasena)
+        //Registro
+
+        //Gestion Usuarios
+        public string Registrar(string Ide, string Nombre, string Correo, string Telefono, string Contrasena, string FechaNa)
         {
             AbrirConex();
-            using (SqlCommand command = new SqlCommand())
-            {
-
-                // La consulta SQL para insertar los valores
-                string sql = "INSERT INTO Usuarios (Identificacion, Nombre, Correo, Telefono, Contraseña) VALUES (@Identificacion, @Nombre, @Correo, @Telefono, @Contrasena)";
-
+            string mesage= "";
                 // Asignar la consulta SQL al SqlCommand
-                command.CommandText = sql;
-                command.Connection = conexion;
+                using (SqlCommand command = new SqlCommand("GestionUsuarios", conexion))
+                {
 
-                // Asignar los parámetros correspondientes
-                command.Parameters.AddWithValue("@Identificacion", Ide);  
-                command.Parameters.AddWithValue("@Nombre", Nombre);  
-                command.Parameters.AddWithValue("@Correo", Correo);  
-                command.Parameters.AddWithValue("@Telefono", Telefono);
-                //string contrasenaEncriptada = EncriptarContrasena(Contrasena);
-                command.Parameters.AddWithValue("@Contrasena", Contrasena);
-
-                // Ejecutar la consulta
-                command.ExecuteNonQuery();
+                    command.CommandType = CommandType.StoredProcedure;
+                    // Asignar los parámetros correspondientes
+                    command.Parameters.AddWithValue("@OP", 1);
+                    command.Parameters.AddWithValue("@Identificacion", Ide);
+                    command.Parameters.AddWithValue("@Nombre", Nombre);
+                    command.Parameters.AddWithValue("@Correo", Correo);
+                    command.Parameters.AddWithValue("@Telefono", Telefono);
+                    //string contrasenaEncriptada = EncriptarContrasena(Contrasena);
+                    command.Parameters.AddWithValue("@Contrasena", Contrasena);
+                    command.Parameters.AddWithValue("@FechaNa", FechaNa);
+                    command.Parameters.AddWithValue("@IdTipoUsu", 1);//cambiar con roles
+                    SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(sqlParameter);
+                    // Ejecutar la consulta
+                    command.ExecuteNonQuery();
+                    mesage=sqlParameter.Value.ToString();
             }
+            
             CerrarConex();
+            return mesage;
         }
 
+        //Login
         public bool login(string Correo, string Contrasena)
         {
             AbrirConex();
             using (SqlCommand command = new SqlCommand())
             {
                 // La consulta SQL para insertar los valores
-                string sql = "Select Correo,Contraseña from Usuarios where Correo= @Correo and Contraseña=@Contrasena";
+                string sql = "Select Correo,Contrasena from Usuarios where Correo= @Correo and Contrasena=@Contrasena";
 
                 // Asignar la consulta SQL al SqlCommand
                 command.CommandText = sql;
@@ -99,8 +109,142 @@ namespace Progra5Jaz.Models
                 }
 
                 return false;
+        }
 
+
+        //Servicios
+        //Registrar
+        public string RegistrarServ(string Nombre, string Desc, string Precio,string IdCategoriaSer, HttpPostedFileBase file)
+        {
+            string Mensaje = "";
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand("GestionServicios", conexion))
+            {
+
+                command.CommandType = CommandType.StoredProcedure;
+                // Asignar los parámetros correspondientes
+                command.Parameters.AddWithValue("@OP", 1);
+
+
+                byte[] imagenBytes;
+                using (var stream = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(stream);
+                    imagenBytes = stream.ToArray();
+                }
+                command.Parameters.AddWithValue("@Nombre", Nombre);
+                command.Parameters.AddWithValue("@Descripcion", Desc);
+                command.Parameters.AddWithValue("@Precio", Precio);
+                command.Parameters.AddWithValue("@IdCategoriaSer", IdCategoriaSer);
+                command.Parameters.AddWithValue("@Imagen", SqlDbType.Image).Value = imagenBytes;
+
+                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                command.Parameters.Add(sqlParameter);
+
+                command.ExecuteNonQuery();
+
+              Mensaje = sqlParameter.Value.ToString();
+            }
             
+            CerrarConex();
+            return Mensaje;
+        }
+
+
+        //Actividades
+        //Registrar
+
+        public void RegistrarActi(string Nombre, string Desc, string MinPer, string Precio, HttpPostedFileBase file)
+        {
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand())
+            {
+                // La consulta SQL para insertar los valores
+                string sql = "Exec GestionActividades 1, @Imagen, @Actividad, @Descripcion, @CantPersonas, @Precio,@Mensaje";
+
+                // Asignar la consulta SQL al SqlCommand
+                command.CommandText = sql;
+                command.Connection = conexion;
+
+
+                byte[] imagenBytes;
+                using (var stream = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(stream);
+                    imagenBytes = stream.ToArray();
+                }
+                command.Parameters.AddWithValue("@Actividad", Nombre);
+                command.Parameters.AddWithValue("@Descripcion", Desc);
+                command.Parameters.AddWithValue("@CantPersonas", MinPer);
+                command.Parameters.AddWithValue("@Precio", Precio);
+                command.Parameters.AddWithValue("@Imagen", SqlDbType.Image).Value = imagenBytes;
+
+                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                command.Parameters.Add(sqlParameter);
+
+                command.ExecuteNonQuery();
+
+                string Mensaje1 = sqlParameter.Value.ToString();
+            }
+
+            CerrarConex();
+        }
+
+
+        //Todas actividades
+        public DataTable Actividades() 
+        {
+            DataTable dt = new DataTable();
+            
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand())
+            {
+                // La consulta SQL para insertar los valores
+                string sql = "Select * from Actividades ";
+
+                // Asignar la consulta SQL al SqlCommand
+                command.CommandText = sql;
+                command.Connection = conexion;
+
+                using (SqlDataAdapter da = new SqlDataAdapter(command))
+                {
+                    da.Fill(dt); 
+                }
+                CerrarConex();
+                return dt;
+            }
+        }
+
+
+
+        //Todas modificar   HACER
+        public object ModActividades(string Imagen, string Actividad, string Descripcion, string MinPer, string Precio)
+        {
+            DataTable dt = new DataTable();
+
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand())
+            {
+                // La consulta SQL para insertar los valores
+                string sql = "Select * from Actividades ";
+
+                // Asignar la consulta SQL al SqlCommand
+                command.CommandText = sql;
+                command.Connection = conexion;
+
+                using (SqlDataAdapter da = new SqlDataAdapter(command))
+                {
+                    da.Fill(dt);
+                }
+                CerrarConex();
+                return dt;
+            }
         }
 
 
