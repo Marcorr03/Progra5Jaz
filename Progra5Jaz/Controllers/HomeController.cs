@@ -42,10 +42,23 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
-        //Promos
+        //Promos Arreglar
         public ActionResult PromosCli()
         {
-
+            DataTable tabla = datos.Actividades();
+            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            {
+                // Si no existe, agregar la nueva columna
+                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+            }
+            foreach (DataRow row in tabla.Rows)
+            {
+                byte[] imagenBytes = (byte[])row["Imagen"];
+                string imagenBase64 = Convert.ToBase64String(imagenBytes);
+                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                row["ImagenDataUrl"] = imagenDataUrl;
+            }
+            ViewBag.Actividades = tabla;
             return View();
         }
 
@@ -53,7 +66,24 @@ namespace Progra5Jaz.Controllers
         //Gestion Promos
         public ActionResult PromosAdm()
         {
+            if (Request.Form.AllKeys.Contains("Registrar"))
+            {
+                string Nombre = Request.Form["Nombre"];
+                string Descripcion = Request.Form["Descripcion"];
+                string Precio = Request.Form["Precio"];
+                HttpPostedFileBase image = Request.Files["picture"];
 
+                string Mensaje = datos.RegistrarPromo(Nombre, Descripcion, Precio, image);
+                if (Mensaje == "Promo registrada")
+                {
+                    ViewBag.icono = "success";
+                }
+                else
+                {
+                    ViewBag.icono = "error";
+                }
+                ViewBag.Message = Mensaje;
+            }
             return View();
         }
 
@@ -119,6 +149,9 @@ namespace Progra5Jaz.Controllers
             }
             return View();
         }
+
+
+
 
         // Vista SPA
         public ActionResult SpaCli()

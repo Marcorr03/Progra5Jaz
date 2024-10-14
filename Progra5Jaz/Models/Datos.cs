@@ -196,12 +196,11 @@ namespace Progra5Jaz.Models
             CerrarConex();
         }
 
-
         //Todas actividades
-        public DataTable Actividades() 
+        public DataTable Actividades()
         {
             DataTable dt = new DataTable();
-            
+
             AbrirConex();
             using (SqlCommand command = new SqlCommand())
             {
@@ -214,7 +213,7 @@ namespace Progra5Jaz.Models
 
                 using (SqlDataAdapter da = new SqlDataAdapter(command))
                 {
-                    da.Fill(dt); 
+                    da.Fill(dt);
                 }
                 CerrarConex();
                 return dt;
@@ -223,8 +222,48 @@ namespace Progra5Jaz.Models
 
 
 
-        //Todas modificar   HACER
-        public object ModActividades(string Imagen, string Actividad, string Descripcion, string MinPer, string Precio)
+        //Gestion Promos
+        //Registro 
+        public string RegistrarPromo(string Promo, string Desc, string Precio, HttpPostedFileBase file)
+        {
+            string Mensaje = "";
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand("GestionPromos", conexion))
+            {
+
+                command.CommandType = CommandType.StoredProcedure;
+                // Asignar los parámetros correspondientes
+                command.Parameters.AddWithValue("@OP", 1);
+
+
+                byte[] imagenBytes;
+                using (var stream = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(stream);
+                    imagenBytes = stream.ToArray();
+                }
+                command.Parameters.AddWithValue("@Promo", Promo);
+                command.Parameters.AddWithValue("@Descripcion", Desc);
+                command.Parameters.AddWithValue("@Precio", Precio);
+                command.Parameters.AddWithValue("@Imagen", SqlDbType.Image).Value = imagenBytes;
+
+                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                command.Parameters.Add(sqlParameter);
+
+                command.ExecuteNonQuery();
+
+                Mensaje = sqlParameter.Value.ToString();
+            }
+
+            CerrarConex();
+            return Mensaje;
+        }
+
+        //Todas promos
+        public DataTable Promos()
         {
             DataTable dt = new DataTable();
 
@@ -232,7 +271,7 @@ namespace Progra5Jaz.Models
             using (SqlCommand command = new SqlCommand())
             {
                 // La consulta SQL para insertar los valores
-                string sql = "Select * from Actividades ";
+                string sql = "Select * from Promos ";
 
                 // Asignar la consulta SQL al SqlCommand
                 command.CommandText = sql;
