@@ -48,12 +48,23 @@ body {
     border-radius: 10%;
 }
 
+
 .agregar:hover {
     transition:all 1s;
     transform:scale(1.2)
 }
 
-.row {
+
+.btnMenu {
+    width: 45px;
+    transition: all 1s;
+    height: 45px;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: -18px;
+    box-shadow: 0 0 10px #f1a204;
+    padding: 2px;
+    border-radius: 10%;
     gap: 10px;
     justify-content: center;
 }
@@ -112,8 +123,8 @@ footer {
 
 .neon-effect {
     color: rgb(12, 11, 11);
-    font-size: 22px;
-    padding: 10px;
+    font-size: 50px;
+    padding: 20px;
     transition: all 0.3s ease;
     text-decoration-line: none;
 }

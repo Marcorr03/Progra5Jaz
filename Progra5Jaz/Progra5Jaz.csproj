@@ -91,9 +91,14 @@
     <Content Include="Global.asax" />
     <Content Include="IMG\agen.png" />
     <Content Include="IMG\agendar.png" />
+    <Content Include="IMG\contacto.png" />
+    <Content Include="IMG\dermapen.jpg" />
+    <Content Include="IMG\LIMPIEZA FACIAL.jpg" />
+    <Content Include="IMG\limpiezafacial.jpg" />
     <Content Include="IMG\logo.jpeg" />
     <Content Include="IMG\menu.png" />
     <Content Include="IMG\NOTIFI.png" />
+    <Content Include="IMG\piedras calientes.jpg" />
     <Content Include="IMG\spa.jpg" />
     <Content Include="IMG\spa2.jpg" />
     <Content Include="IMG\spapareja.jpg" />
@@ -126,6 +131,9 @@
     <Content Include="Views\Home\EsteticaCli.cshtml" />
     <Content Include="Views\Home\Contactenos.cshtml" />
     <Content Include="Views\Home\Nosotros.cshtml" />
+    <Content Include="Views\Home\ReservasPromos.cshtml" />
+    <Content Include="Views\Home\ReservasActividades.cshtml" />
+    <Content Include="Views\Home\ReservasServicios.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

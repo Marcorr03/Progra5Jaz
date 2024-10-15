@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Data;
 @{
     Layout = null;
 }
@@ -26,24 +26,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="neon-effect Dorado" href="menu.html">Home</a>
+                    <a class="neon-effect Dorado" href="~/Home/Menu">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="neon-effect Dorado " href="nosotros.html">Sobre Nosotros</a>
+                    <a class="neon-effect Dorado " href="~/Home/Nosotros">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <a class="neon-effect Dorado" href="servicios.html">Servicios</a>
-                    <ul class="inactive"><li><a href="spa.html">SPA</a></li> <li><a href="estetica.html">ESTETICA</a></li><li><a href="manipedi.html">MANICURE & PEDICURE</a></li></ul>
+                    <ul class="inactive"><li><a href="~/Home/SpaCli">SPA</a></li> <li><a href="~/Home/EsteticaCli">ESTETICA</a></li><li><a href="~/Home/ManPedCli">MANICURE & PEDICURE</a></li></ul>
                 </li>
                 <li class="nav-item">
-                    <a class="neon-effect Dorado" href="reservas.html">Reservas</a>
+                    <a class="neon-effect Dorado" href="~/Home/Reservas">Reservas</a>
                     <ul class="inactive"><li><a href="">SPA</a></li> <li><a href="">ESTETICA</a></li><li><a href="">MANICURE & PEDICURE</a></li></ul>
                 </li>
                 <li class="nav-item">
-                    <a class="neon-effect Dorado" href="registro.html">Registro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="neon-effect Dorado" href="contactenos.html">Contactenos</a>
+                    <a class="neon-effect Dorado" href="~/Home/Contactenos">Contactenos</a>
                 </li>
             </ul>
         </div>
@@ -62,34 +59,29 @@
     <div class="container">
         <p class="card-title DoradoL" style="font-size: 30px; text-align: center;">Servicios Esteticos</p>
         <div class="row">
-            <div class="card">
-                <img src="~/IMG/spapareja.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div style="">
-                        <h5 class="card-title">SPA PAREJAS</h5>
-                        <p>Disfruta con tu pareja un momento especial!!</p>
-                        <p>Min de personas: 2</p>
-                        <h6>Precio: 12000/p</h6>
-                        <div style=" display:flex;">
-                            <img src="~/IMG/agen.png" class="agregar" alt="">
+            @if (ViewBag.Estetica != null)
+            {
+                foreach (DataRow row in ViewBag.Estetica.Rows)
+                {
+                    <div class="card">
+                        <img src="@row["ImagenDataUrl"]" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div style="">
+                                <h5 class="card-title">@row["Nombre"]</h5>
+                                <p>@row["Descripcion"]</p>
+                                <h6>Precio: @row["Precio"]/p</h6>
+                                <div style=" display:flex;">
+                                    <img src="~/IMG/agen.png" class="agregar" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="~/IMG/spa.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div style="">
-                        <h5 class="card-title">SPA GROUPS</h5>
-                        <p>Disfruta con amigos, familia u otros!!</p>
-                        <p>Min de personas: 5</p>
-                        <h6>Precio: 10000/p</h6>
-                        <div style=" display:flex;">
-                            <img src="~/IMG/agen.png" class="agregar" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+                }
+            }
+            else
+            {
+                <p>No hay actividades</p>
+            }            
         </div>
     </div>
     <br />

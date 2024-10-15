@@ -38,14 +38,7 @@ namespace Progra5Jaz.Controllers
         //Menu
         public ActionResult Menu()
         {
-
-            return View();
-        }
-
-        //Promos Arreglar
-        public ActionResult PromosCli()
-        {
-            DataTable tabla = datos.Actividades();
+            DataTable tabla = datos.Promos();
             if (!tabla.Columns.Contains("ImagenDataUrl"))
             {
                 // Si no existe, agregar la nueva columna
@@ -58,7 +51,27 @@ namespace Progra5Jaz.Controllers
                 string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
                 row["ImagenDataUrl"] = imagenDataUrl;
             }
-            ViewBag.Actividades = tabla;
+            ViewBag.Promos = tabla;
+            return View();
+        }
+
+        //Promos Vista
+        public ActionResult PromosCli()
+        {
+            DataTable tabla = datos.Promos();
+            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            {
+                // Si no existe, agregar la nueva columna
+                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+            }
+            foreach (DataRow row in tabla.Rows)
+            {
+                byte[] imagenBytes = (byte[])row["Imagen"];
+                string imagenBase64 = Convert.ToBase64String(imagenBytes);
+                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                row["ImagenDataUrl"] = imagenDataUrl;
+            }
+            ViewBag.Promos = tabla;
             return View();
         }
 
@@ -74,7 +87,7 @@ namespace Progra5Jaz.Controllers
                 HttpPostedFileBase image = Request.Files["picture"];
 
                 string Mensaje = datos.RegistrarPromo(Nombre, Descripcion, Precio, image);
-                if (Mensaje == "Promo registrada")
+                if (Mensaje == "Promoción registrada")
                 {
                     ViewBag.icono = "success";
                 }
@@ -87,7 +100,7 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
-        //Actividades
+        //Actividades Vista
         public ActionResult ActividadesCli()
         {
             DataTable tabla = datos.Actividades();
@@ -119,7 +132,19 @@ namespace Progra5Jaz.Controllers
                 string Precio = Request.Form["Precio"];
                 HttpPostedFileBase image = Request.Files["picture"];
                 datos.RegistrarActi(Nombre, Descripcion,MinPer,Precio, image);
-            }
+
+                string Mensaje = datos.RegistrarPromo(Nombre, Descripcion, Precio, image);
+                if (Mensaje == "Promo registrada")
+                {
+                    ViewBag.icono = "success";
+                }
+                else
+                {
+                    ViewBag.icono = "error";
+                }
+                ViewBag.Message = Mensaje;
+
+        }
             
             return View();
         }
@@ -156,7 +181,20 @@ namespace Progra5Jaz.Controllers
         // Vista SPA
         public ActionResult SpaCli()
         {
-
+            DataTable tabla = datos.Spa();
+            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            {
+                // Si no existe, agregar la nueva columna
+                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+            }
+            foreach (DataRow row in tabla.Rows)
+            {
+                byte[] imagenBytes = (byte[])row["Imagen"];
+                string imagenBase64 = Convert.ToBase64String(imagenBytes);
+                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                row["ImagenDataUrl"] = imagenDataUrl;
+            }
+            ViewBag.Spa = tabla;
             return View();
         }
 
@@ -164,7 +202,20 @@ namespace Progra5Jaz.Controllers
         //Vista ManiPedi
         public ActionResult ManPedCli()
         {
-
+            DataTable tabla = datos.ManPed();
+            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            {
+                // Si no existe, agregar la nueva columna
+                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+            }
+            foreach (DataRow row in tabla.Rows)
+            {
+                byte[] imagenBytes = (byte[])row["Imagen"];
+                string imagenBase64 = Convert.ToBase64String(imagenBytes);
+                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                row["ImagenDataUrl"] = imagenDataUrl;
+            }
+            ViewBag.ManPed = tabla;
             return View();
         }
 
@@ -172,23 +223,45 @@ namespace Progra5Jaz.Controllers
         // Vista Estetica
         public ActionResult EsteticaCli()
         {
-
+            DataTable tabla = datos.Estetica();
+            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            {
+                // Si no existe, agregar la nueva columna
+                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+            }
+            foreach (DataRow row in tabla.Rows)
+            {
+                byte[] imagenBytes = (byte[])row["Imagen"];
+                string imagenBase64 = Convert.ToBase64String(imagenBytes);
+                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                row["ImagenDataUrl"] = imagenDataUrl;
+            }
+            ViewBag.Estetica = tabla;
             return View();
         }
 
         //Contactenos
         public ActionResult Contactenos()
         {
+            if (Request.Form.AllKeys.Contains("Registrar"))
+            {
+                string Correo = Request.Form["Correo"];
+                string Men = Request.Form["Descripcion"];
 
+                string Mensaje = datos.EnvioMensaje(Correo, Men);
+                if (Mensaje == "Mensaje enviado")
+                {
+                    ViewBag.icono = "success";
+                }
+                else
+                {
+                    ViewBag.icono = "error";
+                }
+                ViewBag.Message = Mensaje;
+            }
             return View();
         }
-
-        //Nosotros
-        public ActionResult Nosotros()
-        {
-
-            return View();
-        }
+        
 
         //Registro
         public ActionResult Registro()
@@ -214,10 +287,33 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
+        //Agendar
+        public ActionResult ReservasPromos()
+        {
 
-       
+            return View();
+        }
 
-       
+        //Agendar
+        public ActionResult ReservasActividades()
+        {
+
+            return View();
+        }
+
+        //Agendar
+        public ActionResult ReservasServicios()
+        {
+
+            return View();
+        }
+
+        //Nosotros
+        public ActionResult Nosotros()
+        {
+
+            return View();
+        }
 
     }
 

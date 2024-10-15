@@ -154,23 +154,98 @@ namespace Progra5Jaz.Models
         }
 
 
-        //Actividades
-        //Registrar
-
-        public void RegistrarActi(string Nombre, string Desc, string MinPer, string Precio, HttpPostedFileBase file)
+        //Vista Servicio Spa
+        public DataTable Spa()
         {
+            DataTable dt = new DataTable();
+
             AbrirConex();
             using (SqlCommand command = new SqlCommand())
             {
                 // La consulta SQL para insertar los valores
-                string sql = "Exec GestionActividades 1, @Imagen, @Actividad, @Descripcion, @CantPersonas, @Precio,@Mensaje";
+                string sql = "select *from Servicios  ";
 
                 // Asignar la consulta SQL al SqlCommand
                 command.CommandText = sql;
                 command.Connection = conexion;
 
+                using (SqlDataAdapter da = new SqlDataAdapter(command))
+                {
+                    da.Fill(dt);
+                }
+                CerrarConex();
+                return dt;
+            }
+        }
 
-                byte[] imagenBytes;
+
+        //Vista Estetica
+        public DataTable Estetica()
+        {
+            DataTable dt = new DataTable();
+
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand())
+            {
+                // La consulta SQL para insertar los valores
+                string sql = "Select * from Servicios  ";
+
+                // Asignar la consulta SQL al SqlCommand
+                command.CommandText = sql;
+                command.Connection = conexion;
+
+                using (SqlDataAdapter da = new SqlDataAdapter(command))
+                {
+                    da.Fill(dt);
+                }
+                CerrarConex();
+                return dt;
+            }
+        }
+
+
+        //Vista ManPed
+        public DataTable ManPed()
+        {
+            DataTable dt = new DataTable();
+
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand())
+            {
+                // La consulta SQL para insertar los valores
+                string sql = "Select * from Servicios ";
+
+                // Asignar la consulta SQL al SqlCommand
+                command.CommandText = sql;
+                command.Connection = conexion;
+
+                using (SqlDataAdapter da = new SqlDataAdapter(command))
+                {
+                    da.Fill(dt);
+                }
+                CerrarConex();
+                return dt;
+            }
+        }
+
+        //Actividades
+        //Registrar
+
+        public string RegistrarActi(string Nombre, string Desc, string MinPer, string Precio, HttpPostedFileBase file)
+        {
+            string Mensaje = "";
+            AbrirConex();
+               
+                using (SqlCommand command = new SqlCommand("GestionActividades", conexion))
+                {
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    // Asignar los parámetros correspondientes
+                    command.Parameters.AddWithValue("@OP", 1);
+
+
+
+                    byte[] imagenBytes;
                 using (var stream = new MemoryStream())
                 {
                     file.InputStream.CopyTo(stream);
@@ -190,13 +265,16 @@ namespace Progra5Jaz.Models
 
                 command.ExecuteNonQuery();
 
-                string Mensaje1 = sqlParameter.Value.ToString();
+                Mensaje = sqlParameter.Value.ToString();
             }
 
             CerrarConex();
+            return Mensaje;
         }
 
-        //Todas actividades
+
+
+        //Vista actividades
         public DataTable Actividades()
         {
             DataTable dt = new DataTable();
@@ -262,7 +340,7 @@ namespace Progra5Jaz.Models
             return Mensaje;
         }
 
-        //Todas promos
+        //Vista promos
         public DataTable Promos()
         {
             DataTable dt = new DataTable();
@@ -284,6 +362,34 @@ namespace Progra5Jaz.Models
                 CerrarConex();
                 return dt;
             }
+        }
+
+        public string EnvioMensaje(string Correo, string Descripcion)
+        {
+            string Mensaje = "";
+            AbrirConex();
+            using (SqlCommand command = new SqlCommand("GestionMensajes", conexion))
+            {
+
+                command.CommandType = CommandType.StoredProcedure;
+                // Asignar los parámetros correspondientes
+                command.Parameters.AddWithValue("@OP", 1);
+                command.Parameters.AddWithValue("@Correo", Correo);
+                command.Parameters.AddWithValue("@Descripcion", Descripcion);
+
+                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                command.Parameters.Add(sqlParameter);
+
+                command.ExecuteNonQuery();
+
+                Mensaje = sqlParameter.Value.ToString();
+            }
+
+            CerrarConex();
+            return Mensaje;
         }
 
 
