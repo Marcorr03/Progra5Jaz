@@ -11,6 +11,13 @@
     width: 340px;
 }
 
+.row {
+    gap: 20px;
+    justify-content: center;
+}
+
+
+
 .card-img-top {
     width: 330px;
     height: 250px;
