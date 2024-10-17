@@ -94,6 +94,7 @@
     <Content Include="IMG\contacto.png" />
     <Content Include="IMG\dermapen.jpg" />
     <Content Include="IMG\Empresa.png" />
+    <Content Include="IMG\festejo.png" />
     <Content Include="IMG\Home.png" />
     <Content Include="IMG\Iconoestetica.png" />
     <Content Include="IMG\iconospa.png" />
@@ -104,7 +105,9 @@
     <Content Include="IMG\menu.png" />
     <Content Include="IMG\NOTIFI.png" />
     <Content Include="IMG\piedras calientes.jpg" />
+    <Content Include="IMG\Promos.png" />
     <Content Include="IMG\Reservas.png" />
+    <Content Include="IMG\Servicios %282%29.png" />
     <Content Include="IMG\spa.jpg" />
     <Content Include="IMG\spa2.jpg" />
     <Content Include="IMG\spapareja.jpg" />
