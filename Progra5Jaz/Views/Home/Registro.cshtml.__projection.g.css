@@ -1,0 +1,30 @@
+/* BEGIN EXTERNAL SOURCE */
+h1 {
+font-style: 'Lobster', cursive; 
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+p {
+font-size: 22px;
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+ width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+display: none;
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+display:flex
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+p {
+padding-bottom: 0%;
+}
+/* END EXTERNAL SOURCE */

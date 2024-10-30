@@ -35,6 +35,29 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
+
+        //Doble factor 
+        public ActionResult DobleFact()
+        {
+            
+            return View();
+        }
+
+
+        //CambioContra 
+        public ActionResult CambioContra()
+        {
+
+            return View();
+        }
+
+        //CambioContra 
+        public ActionResult OlvideContra()
+        {
+
+            return View();
+        }
+
         //Menu
         public ActionResult Menu()
         {
@@ -266,23 +289,41 @@ namespace Progra5Jaz.Controllers
         //Registro
         public ActionResult Registro()
         {
-            if (Request.Form.AllKeys.Contains("Registrar")) {
-                string Ide = Request.Form["Identificacion"];
-                string Nombre = Request.Form["Nombre"];
-                string Correo = Request.Form["Correo"];
-                string Telefono = Request.Form["Telefono"];
-                string Contrasena = Request.Form["Contrasena"];
-                string FechaNa = Request.Form["FechaNa"];
 
-                string Mensaje = datos.Registrar(Ide, Nombre, Correo, Telefono, Contrasena, FechaNa);
-                if (Mensaje == "El usuario registrado")
+            if (Request.Form.AllKeys.Contains("Registrar"))
+            {
+
+                if (Request.Form["contrasena"] == Request.Form["concontrasena"])
                 {
-                    ViewBag.icono = "success";
+                    string pattern = @"^(?=.*[A-Z].*[A-Z].*[A-Z].*[A-Z])(?=.*[a-z].*[a-z].*[a-z].*[a-z])(?=.*[0-9].*[0-9].*[0-9].*[0-9])(?=.*[!#$%^&*()\-_=+\[\]{}|;:,.<>?].*[!#$%^&*()\-_=+\[\]{}|;:,.<>?]).{14,20}$";
+
+                    if (System.Text.RegularExpressions.Regex.IsMatch(Request.Form["contrasena"], pattern)){
+                        string Ide = Request.Form["Identificacion"];
+                        string Nombre = Request.Form["Nombre"];
+                        string Correo = Request.Form["Correo"];
+                        string Telefono = Request.Form["Telefono"];
+                        string Contrasena = Request.Form["Contrasena"];
+                        string FechaNa = Request.Form["FechaNa"];
+                        string Vigencia = Request.Form["value-radio"].Split('-')[1];
+                        string PalabraClave = Request.Form["PalabraClave"];
+
+
+
+                        string Mensaje = datos.Registrar(Ide, Nombre, Correo, Telefono, Contrasena, FechaNa, Vigencia, PalabraClave);
+                        if (Mensaje == "El usuario registrado")
+
+
+
+                        {
+                            ViewBag.icono = "success";
+                        }
+                        else {
+                            ViewBag.icono = "error";
+                        }
+                        ViewBag.Message = Mensaje;
+                    }
                 }
-                else {
-                    ViewBag.icono = "error";
-                }
-                ViewBag.Message = Mensaje;
+
             }
             return View();
         }

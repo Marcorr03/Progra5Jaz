@@ -305,3 +305,376 @@ a.neon-effect.Dorado {
     text-align: center; /* Centra el texto dentro del div */
     margin-bottom: 30px; /* Espacio entre secciones */
 }
+
+
+
+
+
+
+
+
+.buttons-container {
+    width: 100%;
+    justify-items: center;
+    height: 100px;
+    display: none;
+    padding-bottom: 30px;
+}
+
+#checklist {
+    --check: #00cb0a;
+    --disabled: #c3c8de;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 20px auto;
+    align-items: flex-start;
+    justify-content: left;
+    border: 1px solid #00bfff;
+    border-radius: 12px;
+    width: auto;
+}
+
+    #checklist label {
+        color: rgba(255, 255, 255, 0.5);
+        position: relative;
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        transition: color 0.5s ease;
+        margin-right: auto;
+        font: 20px;
+    }
+
+        #checklist label::before, #checklist label::after {
+            content: "";
+            position: absolute;
+        }
+
+        #checklist label::before {
+            height: 2px;
+            width: 8px;
+            left: -27px;
+            background: var(--check);
+            border-radius: 2px;
+            transition: background 0.3s ease;
+        }
+
+        #checklist label:after {
+            height: 4px;
+            width: 4px;
+            left: -25px;
+            border-radius: 50%;
+        }
+
+    #checklist input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+        height: 15px;
+        width: 15px;
+        outline: none;
+        border: 0;
+        margin: 0 15px 0 0;
+        cursor: pointer;
+        background: var(--background);
+        display: grid;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+        #checklist input[type="checkbox"]::before, #checklist input[type="checkbox"]::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            top: auto;
+            background: var(--check);
+            border-radius: 2px;
+        }
+
+        #checklist input[type="checkbox"]::before {
+            width: 0px;
+            right: 60%;
+            transform-origin: right bottom;
+        }
+
+        #checklist input[type="checkbox"]::after {
+            width: 0px;
+            left: 40%;
+            transform-origin: left bottom;
+        }
+
+        #checklist input[type="checkbox"]:checked::before {
+            animation: check-01 0.4s ease forwards;
+        }
+
+        #checklist input[type="checkbox"]:checked::after {
+            animation: check-02 0.4s ease forwards;
+        }
+
+        #checklist input[type="checkbox"]:checked + label {
+            color: var(--disabled);
+            animation: move 0.3s ease 0.1s forwards;
+        }
+
+            #checklist input[type="checkbox"]:checked + label::before {
+                background: var(--disabled);
+                animation: slice 0.4s ease forwards;
+            }
+
+            #checklist input[type="checkbox"]:checked + label::after {
+                animation: firework 0.5s ease forwards 0.1s;
+            }
+
+@keyframes move {
+    50% {
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+
+    100% {
+        padding-right: 0px;
+    }
+}
+
+@keyframes slice {
+    60% {
+        width: 100%;
+        left: 4px;
+    }
+
+    100% {
+        width: 100%;
+        left: -2px;
+        padding-left: 0;
+    }
+}
+
+@keyframes check-01 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        width: 5px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes check-02 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        width: 10px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes check-04 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        width: 5px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes check-04 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        width: 5px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes check-05 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        width: 5px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+
+
+
+@keyframes firework {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813;
+    }
+
+    30% {
+        opacity: 2;
+    }
+
+    100% {
+        opacity: 0;
+        box-shadow: 0 -15px 0 0px #00e813, 14px -8px 0 0px #00e813, 14px 8px 0 0px #00e813, 0 15px 0 0px #00e813, -14px 8px 0 0px #00e813, -14px -8px 0 0px #00e813;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #2e2e2e;
+    color: #e1e1e1;
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+    .close:hover {
+        background-color: #fa5656;
+        color: #ffffff;
+    }
+
+
+.radio-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+    .radio-input * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .radio-input label {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0px 20px;
+        cursor: pointer;
+        height: 50px;
+        position: relative;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+        .radio-input label::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 45px;
+            z-index: -1;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .radio-input label:hover::before {
+            background-color: #2a2e3c;
+        }
+
+    .radio-input input[type="radio"]:checked + label {
+        background-color: #2d3750;
+        border: 2px solid #435dd8;
+        height: 50px;
+    }
+
+    .radio-input .text {
+        color: #fff;
+    }
+
+    .radio-input input[type="radio"] {
+        display: none; /* Hide the radio buttons */
+    }

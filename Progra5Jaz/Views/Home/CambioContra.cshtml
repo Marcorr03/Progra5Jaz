@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Dreams</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/CSS/style.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var texto='@ViewBag.Message';
+        if (texto) {
+            var icono;
+            if (texto == "Se ha enviado una clave temporal a su Email") {
+                icono = "success"
+
+            } else {
+                icono = "error"
+            }
+            Swal.fire({
+                title: texto,
+                text: "Click para continuar",
+                icon: icono
+            });
+        }
+    </script>
+    <div>
+        <form class="Contactenos" method="post" action="~/Home/NewContra" enctype="multipart/form-data">
+            <a href="~/Home/Recuperar"><span class="close">X</span></a>
+            <div class="container mt-5 transparente " style=" width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);">
+                <h2 class="text-center mb-4">Cambio contraseña</h2>
+
+                <p class="message">Por favor, ingrese en Clave Antigua la clave enviada al correo.</p>
+                <div>
+                    <label><span>Palabra clave</span></label>
+                    <input type="password" class="form-control" placeholder="" id="Palabra" name="Palabra" required="">
+                </div>
+                <div>
+                    <label><span>Nueva Contraseña</span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <input class="form-control" type="password" id="contrasena" name="contrasena" placeholder="" required="" title="La contraseña debe tener entre 14 y 20 caracteres, incluyendo al menos 4 letras mayúsculas, 4 letras minúsculas, 4 números y 2 caracteres especiales.">
+                    </div>
+
+                    <div class="buttons-container" id="condicion">
+                        <div id="checklist">
+                            <input value="1" name="r" type="checkbox" id="01" disabled>
+                            <label for="01">14 - 20 caracteres.</label>
+                            <input value="2" name="r" type="checkbox" id="02" disabled>
+                            <label for="02">Minimo 4 letras minúsculas.</label>
+                            <input value="3" name="r" type="checkbox" id="03" disabled>
+                            <label for="03">Minimo 4 letras mayúsculas.</label>
+                            <input value="4" name="r" type="checkbox" id="04" disabled>
+                            <label for="04">Caracteres especiales (%,$,&,#,*,?).</label>
+                            <input value="5" name="r" type="checkbox" id="05" disabled>
+                            <label for="05">Minimo 4 números.</label>
+
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label><span>Confirmar Contraseña</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <input class="form-control" type="password" id="concontrasena" name="concontrasena" placeholder="" required="" aria-describedby="basic-addon1">
+                        </div>
+                        <br />
+                        <div style="display:flex">
+                            <button type="submit" class="Dorado" name="Cambiar" value="Cambiar">Cambiar Clave</button>
+                        </div>
+
+                        <br />
+</form>
+
+
+            </div>
+            <script src="~/JS/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Dreams</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/CSS/style.css">
+</head>
+<body>
+    <div style="padding-top: 10%" class="contlog">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="\JS\login.js"></script>
+        <script>
+        var texto='@ViewBag.Message';
+        if (texto) {
+            var icono;
+            if (texto == "Codigo enviado al Email") {
+                icono = "success"
+
+            } else {
+                icono = "error"
+            }
+            Swal.fire({
+                title: texto,
+                text: "Click para continuar",
+                icon: icono
+            });
+        }
+        </script>
+        <form class="Contactenos" method="post" action="/Home/Recuperar" enctype="multipart/form-data">>
+            <div class="container mt-5 transparente " style=" width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);">
+                    <a href="/Home/login"><span class="close">X</span></a>
+                    <h2 class="text-center mb-4">Recuperación de cuenta</h2>
+                    <p class="message">Por favor, ingrese su correo electrónico donde se enviará la clave de acceso.</p>
+                    <div class="mb-3">
+                        <label><span>Correo</span></label>
+                        <input type="text" class="form-control" placeholder="" id="Correo" name="Correo" required="">
+                    </div>
+                    <div style="display: flex; float: left; width: 100%;">
+                        <button style=" width: 50%;" float: left; class="Dorado" name="Validar" value="Validar">Validar</button>
+                    </div>
+                    <br />
+            </div>
+       </form>
+</body>
+</html>

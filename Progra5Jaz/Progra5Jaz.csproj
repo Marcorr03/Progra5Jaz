@@ -87,6 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\OlvideContra.css" />
     <Content Include="CSS\style.css" />
     <Content Include="Global.asax" />
     <Content Include="IMG\agen.png" />
@@ -113,6 +114,7 @@
     <Content Include="IMG\spapareja.jpg" />
     <Content Include="IMG\usu.png" />
     <Content Include="IMG\VIP %282%29.png" />
+    <Content Include="JS\LOGIN.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +145,9 @@
     <Content Include="Views\Home\ReservasPromos.cshtml" />
     <Content Include="Views\Home\ReservasActividades.cshtml" />
     <Content Include="Views\Home\ReservasServicios.cshtml" />
+    <Content Include="Views\Home\DobleFact.cshtml" />
+    <Content Include="Views\Home\CambioContra.cshtml" />
+    <Content Include="Views\Home\OlvideContra.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

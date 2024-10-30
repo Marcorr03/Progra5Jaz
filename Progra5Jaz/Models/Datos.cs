@@ -32,11 +32,11 @@ namespace Progra5Jaz.Models
         }
 
 
-        public string EncriptarContrasena(string contrasena)
+        public string Encriptar(string dato)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contrasena));
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(dato));
 
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++)
@@ -47,10 +47,14 @@ namespace Progra5Jaz.Models
             }
         }
 
+       
+
+
+
         //Registro
 
         //Gestion Usuarios
-        public string Registrar(string Ide, string Nombre, string Correo, string Telefono, string Contrasena, string FechaNa)
+        public string Registrar(string Ide, string Nombre, string Correo, string Telefono, string Contrasena, string FechaNa, string Vigencia, string PalabraClave)
         {
             AbrirConex();
             string mesage= "";
@@ -63,13 +67,19 @@ namespace Progra5Jaz.Models
                     command.Parameters.AddWithValue("@OP", 1);
                     command.Parameters.AddWithValue("@Identificacion", Ide);
                     command.Parameters.AddWithValue("@Nombre", Nombre);
-                    command.Parameters.AddWithValue("@Correo", Correo);
                     command.Parameters.AddWithValue("@Telefono", Telefono);
-                    //string contrasenaEncriptada = EncriptarContrasena(Contrasena);
-                    command.Parameters.AddWithValue("@Contrasena", Contrasena);
                     command.Parameters.AddWithValue("@FechaNa", FechaNa);
-                    command.Parameters.AddWithValue("@IdTipoUsu", 1);//cambiar con roles
-                    SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                    command.Parameters.AddWithValue("@IdTipoUsu", 1);
+                    command.Parameters.AddWithValue("@Vigencia", Vigencia);
+                    string correoEncriptada = Encriptar(Correo);
+                    command.Parameters.AddWithValue("@Correo", Correo);
+                    string contrasenaEncriptada = Encriptar(Contrasena);
+                    command.Parameters.AddWithValue("@Contrasena", Contrasena);
+                    string PalabraEncriptada = Encriptar(PalabraClave);
+                    command.Parameters.AddWithValue("@PalabraClave", PalabraClave);
+                    command.Parameters.AddWithValue("@Estado", "Activo");
+
+                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
                     {
                         Direction = ParameterDirection.Output
                     };
