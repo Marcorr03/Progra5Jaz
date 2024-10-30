@@ -16,6 +16,8 @@ namespace Progra5Jaz.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            //ViewBag.Mensaje = Session["Recupero"];
+            
             if (Request.Form.AllKeys.Contains("Ingresar"))
             {
                 string Correo = Request.Form["Correo"];
@@ -23,7 +25,9 @@ namespace Progra5Jaz.Controllers
 
                 if (datos.login(Correo, Contrasena))
                 {
-                    return RedirectToAction("Menu", "Home");
+                    datos.CorreoCodigo(Correo);
+                    Session["Email"] = Correo;
+                    return RedirectToAction("DobleFact", "Home");
                 }
                 else
                 {
@@ -39,7 +43,20 @@ namespace Progra5Jaz.Controllers
         //Doble factor 
         public ActionResult DobleFact()
         {
-            
+            ViewBag.Message = "Se envio un código a su correo";
+            if (Request.Form.AllKeys.Contains("1"))
+            {
+                string codigo = Request.Form["1"] + Request.Form["2"] + Request.Form["3"] + Request.Form["4"] + Request.Form["5"];
+                datos.RevisarCod(Session["Email"].ToString(), codigo);
+                if (datos.Mensaje1 == "Correcto")
+                {
+                    return RedirectToAction("Menu", "Home");
+                }
+                else
+                {
+                    ViewBag.Message = datos.Mensaje1;
+                }
+            }
             return View();
         }
 
@@ -47,15 +64,55 @@ namespace Progra5Jaz.Controllers
         //CambioContra 
         public ActionResult CambioContra()
         {
+            ViewBag.Message = Session["Temporal"];
+            Session["Temporal"] = "";
+            if (Request.Form.AllKeys.Contains("Contrasena"))
+            {
+                string contra = Request.Form["Contrasena"];
+                string concontra = Request.Form["ConContrasena"];
+                if (contra == concontra)
+                {
+                    string pattern = @"^(?=.*[A-Z].*[A-Z].*[A-Z].*[A-Z])(?=.*[a-z].*[a-z].*[a-z].*[a-z])(?=.*[0-9].*[0-9].*[0-9].*[0-9])(?=.*[!#$%^&*()\-_=+\[\]{}|;:,.<>?].*[!#$%^&*()\-_=+\[\]{}|;:,.<>?]).{14,20}$";
 
+                    if (System.Text.RegularExpressions.Regex.IsMatch(Request.Form["Contrasena"], pattern))
+                    {
+                        datos.NewContra(Session["Usuario"].ToString(), Request.Form["temporal"], Request.Form["Palabra"], Request.Form["Contrasena"]);
+                        ViewBag.Message = datos.Mensaje1;
+                        if (datos.Mensaje1 == "Tu solicitud se proceso correctamente")
+                        {
+                            Session["Recupero"] = ViewBag.Message;
+                            Session["Email"] = Session["Usuario"].ToString();
+                            return RedirectToAction("Index", "Home");
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.Message = "La contraseña no es valida, cumpla con lo requerido";
+                    }
+                }
+                else
+                {
+                    ViewBag.Message = "Las contraseñas no coinsiden";
+                }
+            }
             return View();
         }
 
         //CambioContra 
         public ActionResult OlvideContra()
         {
-
-            return View();
+            if (Request.Form.AllKeys.Contains("Correo"))
+            {
+                datos.CambioContra(Request.Form["Correo"]);
+                ViewBag.Message = datos.Mensaje1;
+                if (datos.Mensaje1 == "Se ha enviado una contraseña temporal a su Email")
+                {
+                    Session["Temporal"] = "Se ha enviado una clave temporal a su Email";
+                    Session["Usuario"] = Request.Form["Correo"];
+                    return RedirectToAction("CambioContra", "Home");
+                }
+            }
+                return View();
         }
 
         //Menu

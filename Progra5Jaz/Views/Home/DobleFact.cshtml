@@ -7,22 +7,19 @@
 
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Dreams</title>
-    <!-- Enlace a Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <title>Hotel Costa Hermosa</title>
     <link rel="stylesheet" href="~/CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
-    <div>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
     var texto='@ViewBag.Message';
         if (texto) {
             var icono;
-            if (texto == "Se ha enviado un codigo de verificacion a su Email") {
+            if (texto == "Se envio un código a su correo") {
                 icono = "success"
 
             } else {
@@ -34,28 +31,28 @@
                 icon: icono
             });
         }
-        </script>
-        <form class="form1" action="/Home/Verificar" method="post" enctype="multipart/form-data">
-            <a href="/Home/login"><span class="close">X</span></a>
+    </script>
+    <form class="form1" action="~/Home/DobleFact" method="post" enctype="multipart/form-data">
+        <a href="~/Home/index"><span class="close">X</span></a>
 
-            <div class="info">
-                <span class="title">Verificacion</span>
-                <p class="description">Ingresa el codigo de verificacion</p>
-            </div>
-            <div class="input-fields">
-                <input name="1" id="1" maxlength="1" type="tel" placeholder="" required>
-                <input name="2" id="2" maxlength="1" type="tel" placeholder="" required>
-                <input name="3" id="3" maxlength="1" type="tel" placeholder="" required>
-                <input name="4" id="4" maxlength="1" type="tel" placeholder="" required>
-                <input name="5" id="5" maxlength="1" type="tel" placeholder="" required>
-            </div>
+        <div class="info">
+            <span class="title">Verificacion</span>
+            <p class="description">Ingresa el codigo de verificacion</p>
+        </div>
+        <div class="input-fields">
+            <input name="1" id="1" maxlength="1" type="tel" placeholder="" required>
+            <input name="2" id="2" maxlength="1" type="tel" placeholder="" required>
+            <input name="3" id="3" maxlength="1" type="tel" placeholder="" required>
+            <input name="4" id="4" maxlength="1" type="tel" placeholder="" required>
+            <input name="5" id="5" maxlength="1" type="tel" placeholder="" required>
+        </div>
 
-            <div class="action-btns">
-                <button class="verify">Verificar</button>
-            </div>
+        <div class="action-btns">
+            <button class="Dorado">Verificar</button>
+        </div>
 
-        </form>
+    </form>
 
-    </div>
+    <script src="~/JS/login.js"></script>
 </body>
 </html>

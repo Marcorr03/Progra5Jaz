@@ -6,7 +6,11 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net.Security;
+using System.Net;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Web;
 
@@ -19,6 +23,9 @@ namespace Progra5Jaz.Models
 
         string stringConexion = "Data Source=tiusr21pl.cuc-carrera-ti.ac.cr\\MSSQLSERVER2019;Initial Catalog=ProyprogJaz;User ID=Jaz;Password=progra123;";
 
+        private string Mensaje;
+
+        public string Mensaje1 { get => Mensaje; set => Mensaje = value; }
 
         public void AbrirConex()
         {
@@ -31,25 +38,60 @@ namespace Progra5Jaz.Models
             conexion.Close();
         }
 
+        // Clave y IV codificados en Base64
+        byte[] key = Convert.FromBase64String("wM6v3Xe1h8c2N1A2m4H6eQ==");
+        byte[] iV = Convert.FromBase64String("VbT1eL4UwYZ2JNdyUkgE4w==");
+        public byte[] Key { get => key; set => key = value; }
+        public byte[] IV { get => iV; set => iV = value; }
 
-        public string Encriptar(string dato)
+        public static byte[] Encriptar(string plainText, byte[] Key, byte[] IV)
         {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(dato));
+            byte[] encrypted;
 
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Key;
+                aes.IV = IV;
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
                 {
-                    builder.Append(bytes[i].ToString("x2"));
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                    {
+                        swEncrypt.Write(plainText);
+                    }
+                    encrypted = msEncrypt.ToArray();
                 }
-                return builder.ToString();
             }
+
+            return encrypted;
         }
 
-       
+        public string Desencriptar(byte[] cipherText, byte[] Key, byte[] IV)
+        {
+            string plaintext = null;
 
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Key;
+                aes.IV = IV;
 
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                    {
+                        plaintext = srDecrypt.ReadToEnd();
+                    }
+                }
+            }
+
+            return plaintext;
+        }
 
         //Registro
 
@@ -71,15 +113,15 @@ namespace Progra5Jaz.Models
                     command.Parameters.AddWithValue("@FechaNa", FechaNa);
                     command.Parameters.AddWithValue("@IdTipoUsu", 1);
                     command.Parameters.AddWithValue("@Vigencia", Vigencia);
-                    string correoEncriptada = Encriptar(Correo);
-                    command.Parameters.AddWithValue("@Correo", Correo);
-                    string contrasenaEncriptada = Encriptar(Contrasena);
-                    command.Parameters.AddWithValue("@Contrasena", Contrasena);
-                    string PalabraEncriptada = Encriptar(PalabraClave);
-                    command.Parameters.AddWithValue("@PalabraClave", PalabraClave);
+                    byte[] correoEncriptada = Encriptar(Correo, Key, IV);
+                    command.Parameters.AddWithValue("@Correo", correoEncriptada);
+                    byte[] contrasenaEncriptada = Encriptar(Contrasena, Key, IV);
+                    command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
+                    byte[] PalabraEncriptada = Encriptar(PalabraClave, Key, IV);
+                    command.Parameters.AddWithValue("@PalabraClave", PalabraEncriptada);
                     command.Parameters.AddWithValue("@Estado", "Activo");
 
-                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                    SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
                     {
                         Direction = ParameterDirection.Output
                     };
@@ -106,9 +148,12 @@ namespace Progra5Jaz.Models
                 command.CommandText = sql;
                 command.Connection = conexion;
 
+
                 // Asignar los parámetros correspondientes
-                command.Parameters.AddWithValue("@Correo", Correo);
-                command.Parameters.AddWithValue("@Contrasena", Contrasena);
+                byte[] correoEncriptada = Encriptar(Correo, Key, IV);
+                command.Parameters.AddWithValue("@Correo", correoEncriptada);
+                byte[] contrasenaEncriptada = Encriptar(Contrasena, Key, IV);
+                command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
 
                 object result = command.ExecuteScalar();
                 CerrarConex();
@@ -121,10 +166,267 @@ namespace Progra5Jaz.Models
                 return false;
         }
 
+        ///////////////////////////////////////////////////////
+        public void CambioContra(string Email)
+        {
+            // Configuración del servidor SMTP y credenciales
+            string smtpAddress = "smtp.gmail.com";
+            int portNumber = 587;
+            bool enableSSL = true;
+            string emailFrom = "verificacion.hch@gmail.com";
+            string password = "lectqauwhhyzfuds";
+            string subject = "Recuperacion Cuenta";
+            string body = @"
+            <html>
+            <body>
+                <h1>Recuperación de Cuenta</h1>
+                <p>Estimado usuario,</p>
+                <p>Para recuperar tu cuenta, utiliza la siguiente contraseña temporal:</p>
+                <p><strong>TEMPORARY_PASSWORD</strong></p>
+                <p>Por favor, asegúrate de cambiar tu contraseña tan pronto como ingreses a tu cuenta.</p>
+                <p>Gracias,</p>
+                <p>El equipo de soporte</p>
+            </body>
+            </html>";
 
-        //Servicios
-        //Registrar
-        public string RegistrarServ(string Nombre, string Desc, string Precio,string IdCategoriaSer, HttpPostedFileBase file)
+            string temporaryPassword = GenerarContra(14, 20);
+            body = body.Replace("TEMPORARY_PASSWORD", temporaryPassword);
+            ModContra(Email, temporaryPassword);
+                using (MailMessage mail = new MailMessage())
+                {
+                    mail.From = new MailAddress(emailFrom, "Recuperacion", System.Text.Encoding.UTF8);
+                    mail.To.Add(Email);
+                    mail.Subject = subject;
+                    mail.Body = body;
+                    mail.IsBodyHtml = true; // Establecer en true si el cuerpo del correo es HTML
+                    mail.Priority = MailPriority.Normal;
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.UseDefaultCredentials = enableSSL;
+                    smtp.Port = portNumber;
+                    smtp.Host = smtpAddress;
+                    smtp.Credentials = new NetworkCredential(emailFrom, password);
+                    ServicePointManager.ServerCertificateValidationCallback = delegate
+                        (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
+                    { return true; };
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
+                Mensaje1 = "Se ha enviado una contraseña temporal a su Email";
+            }
+        }
+        public void ModContra(string Email, string temporaryPassword)
+        {
+            AbrirConex();
+
+            using (SqlCommand command = new SqlCommand("sp_Manejo_Contra", conexion))
+            {
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@op", 1);
+                byte[] encrypted1 = Encriptar(Email, Key, IV);
+                byte[] encrypted2 = Encriptar(temporaryPassword, Key, IV);
+                command.Parameters.AddWithValue("@Email", encrypted1);
+                command.Parameters.AddWithValue("@Contra", encrypted2);
+
+                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                command.Parameters.Add(sqlParameter);
+                command.ExecuteNonQuery();
+            }
+            CerrarConex();
+        }
+
+
+        public void NewContra(string Email, string Contra, string Palabra, string NewContra)
+        {
+            AbrirConex();
+
+            using (SqlCommand command = new SqlCommand("sp_Manejo_Contra", conexion))
+            {
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@op", 2);
+                byte[] encrypted1 = Encriptar(Email, Key, IV);
+                byte[] encrypted2 = Encriptar(Palabra, Key, IV);
+                byte[] encrypted3 = Encriptar(Contra, Key, IV);
+                byte[] encrypted4 = Encriptar(NewContra, Key, IV);
+                command.Parameters.AddWithValue("@Email", encrypted1);
+                command.Parameters.AddWithValue("@Palabra", encrypted2);
+                command.Parameters.AddWithValue("@Contra", encrypted3);
+                command.Parameters.AddWithValue("@NewContra", encrypted4);
+                SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                command.Parameters.Add(sqlParameter);
+                command.ExecuteNonQuery();
+
+                Mensaje1 = sqlParameter.Value.ToString();
+
+            }
+            CerrarConex();
+        }
+
+        static string GenerarContra(int min, int max)
+        {
+            const string upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string lowerCase = "abcdefghijklmnopqrstuvwxyz";
+            const string digits = "0123456789";
+            const string specialChars = "!@#$%^&*()-_=+[]{}|;:,.<>?";
+
+            Random random = new Random();
+            int passwordLength = random.Next(min, max + 1);
+
+            var passwordChars = new char[passwordLength];
+            int currentIndex = 0;
+
+            void AddRandomChars(string chars, int count)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    passwordChars[currentIndex++] = chars[random.Next(chars.Length)];
+                }
+            }
+
+            AddRandomChars(upperCase, 4);
+            AddRandomChars(lowerCase, 4);
+            AddRandomChars(digits, 4);
+            AddRandomChars(specialChars, 2);
+
+            for (int i = currentIndex; i < passwordLength; i++)
+            {
+                string allChars = upperCase + lowerCase + digits + specialChars;
+                passwordChars[i] = allChars[random.Next(allChars.Length)];
+            }
+
+            // Shuffle the array to ensure randomness
+            var shuffledPassword = passwordChars.OrderBy(x => random.Next()).ToArray();
+
+            return new string(shuffledPassword);
+        }
+
+        public void CorreoCodigo(string Email)
+{
+    // Configuración del servidor SMTP y credenciales
+    string smtpAddress = "smtp.gmail.com";
+    int portNumber = 587;
+    bool enableSSL = true;
+    string emailFrom = "verificacion.hch@gmail.com";
+    string password = "lectqauwhhyzfuds";
+    string subject = "Codigo de verificacion";
+    string body = @"
+            <html>
+            <body>
+                <h1>Codigo de verificacion</h1>
+                <p>Estimado usuario,</p>
+                <p>Para ingresar, utiliza el siguiente codigo:</p>
+                <p><strong>TEMPORARY_PASSWORD</strong></p>
+                <p>Ingrese este codigo en campo requerido para poner ingresar al sistema.</p>
+                <p>Gracias,</p>
+                <p>El equipo de soporte</p>
+            </body>
+            </html>";
+
+    string codigo = GenerarCodigo();
+    body = body.Replace("TEMPORARY_PASSWORD", codigo);
+    EnviarCod(Email, codigo);using (MailMessage mail = new MailMessage())
+        {
+            mail.From = new MailAddress(emailFrom, "Codigo", System.Text.Encoding.UTF8);
+            mail.To.Add(Email);
+            mail.Subject = subject;
+            mail.Body = body;
+            mail.IsBodyHtml = true; // Establecer en true si el cuerpo del correo es HTML
+            mail.Priority = MailPriority.Normal;
+            SmtpClient smtp = new SmtpClient();
+            smtp.UseDefaultCredentials = enableSSL;
+            smtp.Port = portNumber;
+            smtp.Host = smtpAddress;
+            smtp.Credentials = new NetworkCredential(emailFrom, password);
+            ServicePointManager.ServerCertificateValidationCallback = delegate
+                (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
+            { return true; };
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
+            Mensaje1 = "Se ha enviado un codigo de verificacion a su Email";
+    }
+}
+
+    public void EnviarCod(string Email, string Codigo)
+    {
+        AbrirConex();
+
+        using (SqlCommand command = new SqlCommand("sp_Cod", conexion))
+        {
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@op", 1);
+            byte[] encrypted1 = Encriptar(Email, Key, IV);
+            byte[] encrypted2 = Encriptar(Codigo, Key, IV);
+            command.Parameters.AddWithValue("@Email", encrypted1);
+            command.Parameters.AddWithValue("@Codigo", encrypted2);
+
+            SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+            {
+                Direction = ParameterDirection.Output
+            };
+
+            command.Parameters.Add(sqlParameter);
+            command.ExecuteNonQuery();
+        }
+            CerrarConex();
+    }
+
+
+    public void RevisarCod(string Email, string Codigo)
+    {
+        AbrirConex();
+
+        using (SqlCommand command = new SqlCommand("sp_Cod", conexion))
+        {
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@op", 2);
+            byte[] encrypted1 = Encriptar(Email, Key, IV);
+            byte[] encrypted2 = Encriptar(Codigo, Key, IV);
+            command.Parameters.AddWithValue("@Email", encrypted1);
+            command.Parameters.AddWithValue("@Codigo", encrypted2);
+
+            SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+            {
+                Direction = ParameterDirection.Output
+            };
+
+            command.Parameters.Add(sqlParameter);
+            command.ExecuteNonQuery();
+
+            Mensaje1 = sqlParameter.Value.ToString();
+
+        }
+        CerrarConex();
+    }
+    static string GenerarCodigo()
+    {
+        using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+        {
+            byte[] randomNumber = new byte[1];
+            string codigo = "";
+
+            for (int i = 0; i < 5; i++)
+            {
+                rng.GetBytes(randomNumber);
+                int digit = (randomNumber[0] % 10);
+                codigo += digit.ToString();
+            }
+            return codigo;
+        }
+    }
+
+//Servicios
+//Registrar
+public string RegistrarServ(string Nombre, string Desc, string Precio,string IdCategoriaSer, HttpPostedFileBase file)
         {
             string Mensaje = "";
             AbrirConex();

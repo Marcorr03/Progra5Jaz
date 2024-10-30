@@ -306,34 +306,25 @@ a.neon-effect.Dorado {
     margin-bottom: 30px; /* Espacio entre secciones */
 }
 
-
-
-
-
-
-
-
 .buttons-container {
-    width: 100%;
-    justify-items: center;
-    height: 100px;
+    width: 400px;
+    justify-items: left;
+    height: 300px;
     display: none;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 #checklist {
-    --check: #00cb0a;
+    --check: #ad7b17;
     --disabled: #c3c8de;
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
     padding: 10px;
-    display: grid;
-    grid-template-columns: 20px auto;
+    grid-template-columns: 20px auto;;
     align-items: flex-start;
     justify-content: left;
-    border: 1px solid #00bfff;
-    border-radius: 12px;
-    width: auto;
+    width: 300px;
+    margin-left:0;
 }
 
     #checklist label {
@@ -352,14 +343,6 @@ a.neon-effect.Dorado {
             position: absolute;
         }
 
-        #checklist label::before {
-            height: 2px;
-            width: 8px;
-            left: -27px;
-            background: var(--check);
-            border-radius: 2px;
-            transition: background 0.3s ease;
-        }
 
         #checklist label:after {
             height: 4px;
@@ -379,7 +362,6 @@ a.neon-effect.Dorado {
         margin: 0 15px 0 0;
         cursor: pointer;
         background: var(--background);
-        display: grid;
         align-items: center;
         margin-right: 20px;
     }
@@ -396,13 +378,11 @@ a.neon-effect.Dorado {
         #checklist input[type="checkbox"]::before {
             width: 0px;
             right: 60%;
-            transform-origin: right bottom;
         }
 
         #checklist input[type="checkbox"]::after {
             width: 0px;
             left: 40%;
-            transform-origin: left bottom;
         }
 
         #checklist input[type="checkbox"]:checked::before {
@@ -414,12 +394,12 @@ a.neon-effect.Dorado {
         }
 
         #checklist input[type="checkbox"]:checked + label {
-            color: var(--disabled);
+            color: var(--check);
             animation: move 0.3s ease 0.1s forwards;
         }
 
             #checklist input[type="checkbox"]:checked + label::before {
-                background: var(--disabled);
+                background-color:transparent;
                 animation: slice 0.4s ease forwards;
             }
 
@@ -451,153 +431,6 @@ a.neon-effect.Dorado {
     }
 }
 
-@keyframes check-01 {
-    0% {
-        width: 4px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    50% {
-        width: 0px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    51% {
-        width: 0px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-
-    100% {
-        width: 5px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-}
-
-@keyframes check-02 {
-    0% {
-        width: 4px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    50% {
-        width: 0px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    51% {
-        width: 0px;
-        top: 8px;
-        transform: rotate(-45deg);
-    }
-
-    100% {
-        width: 10px;
-        top: 8px;
-        transform: rotate(-45deg);
-    }
-}
-
-@keyframes check-04 {
-    0% {
-        width: 4px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    50% {
-        width: 0px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    51% {
-        width: 0px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-
-    100% {
-        width: 5px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-}
-
-@keyframes check-04 {
-    0% {
-        width: 4px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    50% {
-        width: 0px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    51% {
-        width: 0px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-
-    100% {
-        width: 5px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-}
-
-@keyframes check-05 {
-    0% {
-        width: 4px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    50% {
-        width: 0px;
-        top: auto;
-        transform: rotate(0);
-    }
-
-    51% {
-        width: 0px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-
-    100% {
-        width: 5px;
-        top: 8px;
-        transform: rotate(45deg);
-    }
-}
-
-
-
-@keyframes firework {
-    0% {
-        opacity: 1;
-        box-shadow: 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813, 0 0 0 -2px #00e813;
-    }
-
-    30% {
-        opacity: 2;
-    }
-
-    100% {
-        opacity: 0;
-        box-shadow: 0 -15px 0 0px #00e813, 14px -8px 0 0px #00e813, 14px 8px 0 0px #00e813, 0 15px 0 0px #00e813, -14px 8px 0 0px #00e813, -14px -8px 0 0px #00e813;
-    }
-}
 
 .close {
     position: absolute;
@@ -620,6 +453,80 @@ a.neon-effect.Dorado {
         color: #ffffff;
     }
 
+.form1 {
+    --black: #000000;
+    --ch-black: #141414;
+    --eer-black: #1b1b1b;
+    --night-rider: #2e2e2e;
+    --white: #ffffff;
+    --af-white: #f3f3f3;
+    --ch-white: #e1e1e1;
+    --tomato: #fa5656;
+    font-family: Helvetica, sans-serif;
+    padding: 25px;
+    display: flex;
+    max-width: 420px;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    color: var(--af-white);
+    background-color: var(--black);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+    margin: auto;
+    top: 100px;
+}
+
+    .form1 .input-fields {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+        .form1 .input-fields input {
+            height: 2.5em;
+            width: 2.5em;
+            outline: none;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.5rem;
+            color: var(--af-white);
+            border-radius: 5px;
+            border: 2.5px solid var(--eer-black);
+            background-color: var(--eer-black);
+        }
+
+            .form1 .input-fields input:focus {
+                border: 1px solid var(--af-white);
+                box-shadow: inset 10px 10px 10px rgba(0, 0, 0, .15);
+                transform: scale(1.05);
+                transition: 0.5s;
+            }
+
+.action-btns {
+    display: flex;
+    margin-top: 20px;
+    gap: 0.5rem;
+}
+
+.info {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 1rem;
+}
 
 .radio-input {
     display: flex;
@@ -661,9 +568,6 @@ a.neon-effect.Dorado {
             transition: all 0.3s ease;
         }
 
-        .radio-input label:hover::before {
-            background-color: #2a2e3c;
-        }
 
     .radio-input input[type="radio"]:checked + label {
         background-color: #2d3750;
