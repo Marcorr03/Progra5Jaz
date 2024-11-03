@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="~/CSS/style.css">
 </head>
 <body>
-    <script src="~/JS/index.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
      var texto = '@ViewBag.Message';
@@ -158,22 +158,22 @@
 
                     <div class="mb-3">
                         <label class="form-label"><span>Paìs</span></label>
-                        <select id="Pais" class="form-control" name="Pais" for="Pais" required placeholder=""></select>
+                        <select id="Pais" class="form-control" name="Pais" for="Pais" required placeholder=""><option>Seleccione un Pais</option></select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label"><span>Provincia</span></label>
-                        <select id="Provincia" class="form-control" name="Provincia" for="Provincia" required placeholder=""></select>
+                        <select id="Provincia" class="form-control" name="Provincia" for="Provincia" required placeholder=""><option>Seleccione una Provincia</option></select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label"><span>Canton</span></label>
-                        <select id="Canton" class="form-control" name="Canton" for="Canton" required placeholder=""></select>
+                        <select id="Canton" class="form-control" name="Canton" for="Canton" required placeholder=""><option>Seleccione un Canton</option></select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label"><span>Distrito</span></label>
-                        <select id="Distrito" class="form-control" name="Distrito" for="Distrito" required placeholder=""></select>
+                        <select id="Distrito" class="form-control" name="Distrito" for="Distrito" required placeholder=""><option>Seleccione un Distrito</option></select>
                     </div>
 
 
@@ -199,6 +199,7 @@
 
     <!-- Enlace a Bootstrap JS y dependencias de JavaScript -->
     <script src="~/JS/LOGIN.js"></script>
+    <script src="~/JS/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
