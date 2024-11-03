@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
 
 namespace Progra5Jaz.Controllers
@@ -28,12 +29,22 @@ namespace Progra5Jaz.Controllers
             }
         }
 
+        public string LeerJson()
+        {
+            string filePath = HostingEnvironment.MapPath("~/App_Data/locations.json");
+
+            // Leer el contenido del archivo
+            string jsonData = System.IO.File.ReadAllText(filePath);
+
+            // Devolver el JSON como resultado
+            return jsonData;
+        }
 
 
         // GET: Login
         public ActionResult Index()
         {
-            
+            datos.EscribirJson();
             return View();
        }
 

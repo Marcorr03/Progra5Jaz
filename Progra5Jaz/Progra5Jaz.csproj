@@ -146,6 +146,7 @@
     <Content Include="IMG\spapareja.jpg" />
     <Content Include="IMG\usu.png" />
     <Content Include="IMG\VIP %282%29.png" />
+    <Content Include="JS\index.js" />
     <Content Include="JS\LOGIN.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="App_Data\locations.json" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
@@ -187,9 +189,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,0 +1,4006 @@
+[
+  {
+    "Descripcion": "Costa Rica",
+    "Pais": 1,
+    "Provincia": 0,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San José",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Alajuela",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Cartago",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Heredia",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Guanacaste",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Puntarenas",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Limón",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 0,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Central",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Escazú",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Desamparados",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Puriscal",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Tarrazú",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Aserrí",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Mora",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Goicoechea",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Santa Ana",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 9,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Alajuelita",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 10,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Vásquez de Coronado",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 11,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Acosta",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 12,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Tibás",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 13,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Moravia",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 14,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Montes de Oca",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 15,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Turrubares",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 16,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Dota",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 17,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Curridabat",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 18,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Pérez Zeledón",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "León Cortés",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 20,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Central",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Ramón",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Grecia",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Mateo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Atenas",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Naranjo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Palmares",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Poás",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 8,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Orotina",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 9,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Carlos",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Zarcero",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Sarchí",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 12,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Upala",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Los Chiles",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 14,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Guatuso",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 15,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Río Cuarto",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 16,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Central",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Paraíso",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "La Unión",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Jiménez",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Turrialba",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Alvarado",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Oreamuno",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 7,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "El Guarco",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 8,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Central",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Barva",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Santo Domingo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Santa Bárbara",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Belén",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 7,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Flores",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 8,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Pablo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 9,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Sarapiquí",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 10,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Liberia",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Nicoya",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Santa Cruz",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Bagaces",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Carrillo",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Cañas",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Abangares",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 7,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Tilarán",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Nandayure",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 9,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "La Cruz",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 10,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Hojancha",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 11,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Central",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Esparza",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Buenos Aires",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Montes de Oro",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Osa",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Quepos",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Golfito",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 7,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Coto Brus",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 8,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Parrita",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 9,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Corredores",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 10,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Garabito",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 11,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Central",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Pococí",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Siquirres",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Talamanca",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Matina",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Guácimo",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Carmen",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Merced",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Hospital",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Catedral",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Zapote",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Francisco de Dos Ríos",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "La Uruca",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Mata Redonda",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Pavas",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Hatillo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "San Sebastián",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 1,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "Escazú",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 2,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Antonio",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 2,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 2,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Desamparados",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Miguel",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Juan de Dios",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Rafael Arriba",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Rafael Abajo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Gravilias",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Los Guido",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 3,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Santiago",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Mercedes Sur",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Barbacoas",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Grifo Alto",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Candelarita",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Desamparaditos",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "San Antonio",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Chires",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 4,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "San Marcos",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 5,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Lorenzo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 5,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Carlos",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 5,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Aserrí",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Tarbaca",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Vuelta de Jorco",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Gabriel",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Legua",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Monterrey",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Salitrillos",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 6,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Colón",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Guayabo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Tabarcia",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Piedras Negras",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Picagres",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Jaris",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Quitirrisí",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 7,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Guadalupe",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Francisco",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Calle Blancos",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Mata de Plátano",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Ipís",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Rancho Redondo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Purral",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 8,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Santa Ana",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 9,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Salitral",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 9,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Pozos",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 9,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Uruca",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 9,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Piedades",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 9,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Brasil",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 9,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Alajuelita",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 10,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Josecito",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 10,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Antonio",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 10,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Concepción",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 10,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Felipe",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 10,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 11,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 11,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Dulce Nombre de Jesús",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 11,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Patalillo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 11,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Cascajal",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 11,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Ignacio",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 12,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Guaitil",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 12,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Palmichal",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 12,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Cangrejal",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 12,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Sabanillas",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 12,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Juan",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 13,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Cinco Esquinas",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 13,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Anselmo Llorente",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 13,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "León XIII",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 13,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Colima",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 13,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Vicente",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 14,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Jerónimo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 14,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "La Trinidad",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 14,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Pedro",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 15,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Sabanilla",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 15,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Mercedes",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 15,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 15,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Pablo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 16,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Pedro",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 16,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Juan de Mata",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 16,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Luis",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 16,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Carara",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 16,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Santa María",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 17,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Jardín",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 17,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Copey",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 17,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Curridabat",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 18,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Granadilla",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 18,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Sánchez",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 18,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Tirrases",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 18,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Isidro de El General",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "El General",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Daniel Flores",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Rivas",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Pedro",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Platanares",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Pejibaye",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Cajón",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Barú",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Río Nuevo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "Páramo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 19,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "San Pablo",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 20,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Andrés",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 20,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Llano Bonito",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 20,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 20,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Santa Cruz",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 20,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Antonio",
+    "Pais": 1,
+    "Provincia": 1,
+    "Canton": 20,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Alajuela",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San José",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Carrizal",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Antonio",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Guácima",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Sabanilla",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Río Segundo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Desamparados",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "Turrúcares",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "Tambor",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 12
+  },
+  {
+    "Descripcion": "Garita",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 13
+  },
+  {
+    "Descripcion": "Sarapiquí",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 1,
+    "Distrito": 14
+  },
+  {
+    "Descripcion": "San Ramón",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Santiago",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Juan",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Piedades Norte",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Piedades Sur",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Ángeles",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Alfaro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Volio",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "Concepción",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "Zapotal",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 12
+  },
+  {
+    "Descripcion": "Peñas Blancas",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 2,
+    "Distrito": 13
+  },
+  {
+    "Descripcion": "Grecia",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San José",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Roque",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Tacares",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Puente de Piedra",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Bolívar",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 3,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "San Mateo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 4,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Desmonte",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 4,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Jesús María",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 4,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Labrador",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 4,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Atenas",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Jesús",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Mercedes",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Concepción",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San José",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Santa Eulalia",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Escobal",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 5,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Naranjo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Miguel",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San José",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Cirrí Sur",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Jerónimo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Juan",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "El Rosario",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Palmitos",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 6,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Palmares",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Zaragoza",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Buenos Aires",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Santiago",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Candelaria",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Esquipulas",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "La Granja",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 7,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "San Pedro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 8,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Juan",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 8,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 8,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Carrillos",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 8,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Sabana Redonda",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 8,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Orotina",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 9,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "El Mastate",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 9,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Hacienda Vieja",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 9,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Coyolar",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 9,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "La Ceiba",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 9,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Quesada",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Florencia",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Buenavista",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Aguas Zarcas",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Venecia",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Pital",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "La Fortuna",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "La Tigra",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "La Palmera",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Venado",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "Cutris",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "Monterrey",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 12
+  },
+  {
+    "Descripcion": "Pocosol",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 10,
+    "Distrito": 13
+  },
+  {
+    "Descripcion": "Zarcero",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Laguna",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Tapesco",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Guadalupe",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Palmira",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Zapote",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Brisas",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 11,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Sarchí Norte",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 12,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Sarchí Sur",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 12,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Toro Amarillo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 12,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Pedro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 12,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Rodríguez",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 12,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Upala",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Aguas Claras",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San José",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Bijagua",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Delicias",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Dos Ríos",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Yolillal",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 13,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Los Chiles",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 14,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Caño Negro",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 14,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "El Amparo",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 14,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Jorge",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 14,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 15,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Buenavista",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 15,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Cote",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 15,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Katira",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 15,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Río Cuarto",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 16,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Santa Rita",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 16,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Santa Isabel",
+    "Pais": 1,
+    "Provincia": 2,
+    "Canton": 16,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Oriental",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Occidental",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Carmen",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Nicolás",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Aguacaliente",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Guadalupe",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Corralillo",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Tierra Blanca",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Dulce Nombre",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Llano Grande",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "Quebradilla",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 1,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "Paraíso",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 2,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Santiago",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 2,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Orosi",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 2,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Cachí",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 2,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Llanos de Santa Lucía",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 2,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Tres Ríos",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Diego",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Juan",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Concepción",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Dulce Nombre",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "San Ramón",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Río Azul",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 3,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Juan Viñas",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 4,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Tucurrique",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 4,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Pejibaye",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 4,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Turrialba",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "La Suiza",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Peralta",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Santa Cruz",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Santa Teresita",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Pavones",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Tuis",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Tayutic",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Santa Rosa",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Tres Equis",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "La Isabel",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "Chirripó",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 5,
+    "Distrito": 12
+  },
+  {
+    "Descripcion": "Pacayas",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 6,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Cervantes",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 6,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Capellades",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 6,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 7,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Cot",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 7,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Potrero Cerrado",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 7,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Cipreses",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 7,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Santa Rosa",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 7,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "El Tejar",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 8,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 8,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Tobosi",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 8,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Patio de Agua",
+    "Pais": 1,
+    "Provincia": 3,
+    "Canton": 8,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Central",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 1,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Barva",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Santo Domingo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Santa Bárbara",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 5,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 6,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Belén",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 7,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Flores",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 8,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "San Pablo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 9,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Sarapiquí",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 10,
+    "Distrito": 0
+  },
+  {
+    "Descripcion": "Heredia",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 1,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Mercedes",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 1,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Francisco",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 1,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Ulloa",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 1,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Vara Blanca",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 1,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Barva",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Pedro",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Pablo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Roque",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Santa Lucía",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San José de la Montaña",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 2,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Santo Domingo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Vicente",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Miguel",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Paracito",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Santo Tomás",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Santa Rosa",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Tures",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Pará",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 3,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Santa Bárbara",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Pedro",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Juan",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Jesús",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Santo Domingo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Purabá",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 4,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 5,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Josecito",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 5,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Santiago",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 5,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Los Ángeles",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 5,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Concepción",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 5,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 6,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San José",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 6,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Concepción",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 6,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Francisco",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 6,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Antonio",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 7,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Ribera",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 7,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "La Asunción",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 7,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Joaquín",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 8,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Barrantes",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 8,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Llorente",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 8,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Pablo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 9,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Rincón de Sabanilla",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 9,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Puerto Viejo",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 10,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "La Virgen",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 10,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Horquetas",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 10,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Llanuras del Gaspar",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 10,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Cureña",
+    "Pais": 1,
+    "Provincia": 4,
+    "Canton": 10,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Liberia",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 1,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Cañas Dulces",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 1,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Mayorga",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 1,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Nacascolo",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 1,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Curubandé",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 1,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Nicoya",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Mansión",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Antonio",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Quebrada Honda",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Sámara",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Nosara",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Belén de Nosarita",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 2,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Santa Cruz",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Bolsón",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Veintisiete de Abril",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Tempate",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Cartagena",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Cuajiniquil",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Diriá",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Cabo Velas",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Tamarindo",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 3,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Bagaces",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 4,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Fortuna",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 4,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Mogote",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 4,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Río Naranjo",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 4,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Filadelfia",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 5,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Palmira",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 5,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Sardinal",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 5,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Belén",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 5,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Cañas",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 6,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Palmira",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 6,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Miguel",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 6,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Bebedero",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 6,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Porozal",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 6,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Las Juntas",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 7,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Sierra",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 7,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Juan",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 7,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Colorado",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 7,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Tilarán",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Quebrada Grande",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Tronadora",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Santa Rosa",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Líbano",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Tierras Morenas",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Arenal",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 8,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Carmona",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 9,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Santa Rita",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 9,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Zapotal",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 9,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Pablo",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 9,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Porvenir",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 9,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Bejuco",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 9,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "La Cruz",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 10,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Santa Cecilia",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 10,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "La Garita",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 10,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Santa Elena",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 10,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Hojancha",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 11,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Monte Romo",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 11,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Puerto Carrillo",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 11,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Huacas",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 11,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Matambú",
+    "Pais": 1,
+    "Provincia": 5,
+    "Canton": 11,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Puntarenas",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Pitahaya",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Chomes",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Lepanto",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Paquera",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Manzanillo",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Guacimal",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Barranca",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Monte Verde",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Isla del Coco",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 10
+  },
+  {
+    "Descripcion": "Cóbano",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 11
+  },
+  {
+    "Descripcion": "Arancibia",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 1,
+    "Distrito": 12
+  },
+  {
+    "Descripcion": "Espíritu Santo",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 2,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "San Juan Grande",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 2,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Macacona",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 2,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "San Rafael",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 2,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Jerónimo",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 2,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Caldera",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 2,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Buenos Aires",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Volcán",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Potrero Grande",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Boruca",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Pilas",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Colinas",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Chánguena",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 7
+  },
+  {
+    "Descripcion": "Biolley",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 8
+  },
+  {
+    "Descripcion": "Brunka",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 3,
+    "Distrito": 9
+  },
+  {
+    "Descripcion": "Miramar",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 4,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "La Unión",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 4,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "San Isidro",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 4,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Puerto Cortés",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 5,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Palmar",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 5,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Sierpe",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 5,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Bahía Ballena",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 5,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Piedras Blancas",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 5,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Bahía Drake",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 5,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Quepos",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 6,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Savegre",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 6,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Naranjito",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 6,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Golfito",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 7,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Puerto Jiménez",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 7,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Guaycará",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 7,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Pavón",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 7,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "San Vito",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 8,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Sabalito",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 8,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Aguabuena",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 8,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Limoncito",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 8,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Pittier",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 8,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Gutiérrez Brown",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 8,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Parrita",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 9,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Corredor",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 10,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "La Cuesta",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 10,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Canoas",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 10,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Laurel",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 10,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Jacó",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 11,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Tárcoles",
+    "Pais": 1,
+    "Provincia": 6,
+    "Canton": 11,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Limón",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 1,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Valle La Estrella",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 1,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Río Blanco",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 1,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Matama",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 1,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Guápiles",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 2,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Jiménez",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 2,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Rita",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 2,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Roxana",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 2,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Cariari",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 2,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Colorado",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 2,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Siquirres",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 3,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Pacuarito",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 3,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Florida",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 3,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Germania",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 3,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Cairo",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 3,
+    "Distrito": 5
+  },
+  {
+    "Descripcion": "Alegría",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 3,
+    "Distrito": 6
+  },
+  {
+    "Descripcion": "Bratsi",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 4,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Sixaola",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 4,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Cahuita",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 4,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Telire",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 4,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Matina",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 5,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Batán",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 5,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Carrandi",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 5,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Guácimo",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 6,
+    "Distrito": 1
+  },
+  {
+    "Descripcion": "Mercedes",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 6,
+    "Distrito": 2
+  },
+  {
+    "Descripcion": "Pocora",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 6,
+    "Distrito": 3
+  },
+  {
+    "Descripcion": "Río Jiménez",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 6,
+    "Distrito": 4
+  },
+  {
+    "Descripcion": "Duacari",
+    "Pais": 1,
+    "Provincia": 7,
+    "Canton": 6,
+    "Distrito": 5
+  }
+]

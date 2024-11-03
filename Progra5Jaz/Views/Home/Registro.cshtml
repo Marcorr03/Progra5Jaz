@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="~/CSS/style.css">
 </head>
 <body>
+    <script src="~/JS/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
      var texto = '@ViewBag.Message';
@@ -88,32 +89,32 @@
                     </div>
                 </div>
 
-              
-                    <div class="buttons-container" id="condicion" style="display: none;">
-                        <div id="checklist">
-                            <div>
-                                <input value="1" name="r" type="checkbox" id="01" disabled>
-                                <label for="01">14 - 20 caracteres.</label>
-                            </div>
-                            <div>
-                                <input value="2" name="r" type="checkbox" id="02" disabled>
-                                <label for="02">Minimo 4 letras minúsculas.</label>
-                            </div>
-                            <div>
-                                <input value="3" name="r" type="checkbox" id="03" disabled>
-                                <label for="03">Minimo 4 letras mayúsculas.</label>
-                            </div>
-                            <div>
-                                <input value="4" name="r" type="checkbox" id="04" disabled>
-                                <label for="04">Caracteres especiales (%,$,&,#,*,?).</label>
-                            </div>
-                            <div>
-                                <input value="5" name="r" type="checkbox" id="05" disabled>
-                                <label for="05">Minimo 4 números.</label>
-                            </div>
+
+                <div class="buttons-container" id="condicion" style="display: none;">
+                    <div id="checklist">
+                        <div>
+                            <input value="1" name="r" type="checkbox" id="01" disabled>
+                            <label for="01">14 - 20 caracteres.</label>
+                        </div>
+                        <div>
+                            <input value="2" name="r" type="checkbox" id="02" disabled>
+                            <label for="02">Minimo 4 letras minúsculas.</label>
+                        </div>
+                        <div>
+                            <input value="3" name="r" type="checkbox" id="03" disabled>
+                            <label for="03">Minimo 4 letras mayúsculas.</label>
+                        </div>
+                        <div>
+                            <input value="4" name="r" type="checkbox" id="04" disabled>
+                            <label for="04">Caracteres especiales (%,$,&,#,*,?).</label>
+                        </div>
+                        <div>
+                            <input value="5" name="r" type="checkbox" id="05" disabled>
+                            <label for="05">Minimo 4 números.</label>
                         </div>
                     </div>
-                
+                </div>
+
 
                 <div class="mb-3">
                     <label><span>Confirmar Clave</span></label>
@@ -166,7 +167,7 @@
                     </table>
                 </div>
 
-</form>
+        </form>
     </div>
 
     <!-- Footer -->

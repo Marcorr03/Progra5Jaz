@@ -13,6 +13,9 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Web;
+using Newtonsoft.Json;
+using System.Web.Hosting;
+using System.Net.Http;
 
 
 namespace Progra5Jaz.Models
@@ -36,6 +39,77 @@ namespace Progra5Jaz.Models
         public void CerrarConex()
         {
             conexion.Close();
+        }
+        public class Location
+        {
+            public string Descripcion { get; set; }
+            public int Pais { get; set; }
+            public int Provincia { get; set; }
+            public int Canton { get; set; }
+            public int Distrito { get; set; }
+        }
+
+        public void EscribirJson()
+        {
+            // Obtener la ruta física del archivo
+            string filePath = HostingEnvironment.MapPath("~/App_Data/locations.json");
+
+            // Verificar si el archivo existe
+            if (File.Exists(filePath))
+            {
+                string existingJson = System.IO.File.ReadAllText(filePath);
+                if (!string.IsNullOrWhiteSpace(existingJson))
+                {
+                    // Deserializar JSON existente para verificar si tiene datos
+                    var listaDatos = JsonConvert.DeserializeObject<List<Location>>(existingJson);
+                    if (listaDatos != null && listaDatos.Count > 0)
+                    {
+                        Console.WriteLine("El archivo JSON ya contiene datos.");
+                    }
+
+                }
+                else
+                {
+                    // Leer datos de la base de datos
+                    var locations = LeerBd();
+
+                    // Serializar a JSON
+                    string json = JsonConvert.SerializeObject(locations, Formatting.Indented);
+
+                    // Escribir JSON a un archivo
+                    File.WriteAllText(filePath, json);
+
+                    Console.WriteLine("JSON escrito en el archivo locations.json en la ruta: " + filePath);
+                }
+            }
+        }
+        private List<Location> LeerBd()
+        {
+            var locations = new List<Location>();
+
+            AbrirConex();
+            string sql = "SELECT Descripcion, ID_Pais, ID_Provincia, ID_Canton, ID_Distrito FROM Ubicaciones";
+
+            using (SqlCommand command = new SqlCommand(sql, conexion))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var location = new Location
+                        {
+                            Descripcion = reader.GetString(0),
+                            Pais = !reader.IsDBNull(1) ? reader.GetInt32(1) : 0,
+                            Provincia = !reader.IsDBNull(2) ? reader.GetInt32(2) : 0,
+                            Canton = !reader.IsDBNull(3) ? reader.GetInt32(3) : 0,
+                            Distrito = !reader.IsDBNull(4) ? reader.GetInt32(4) : 0
+                        };
+                        locations.Add(location);
+                    }
+                }
+            }
+            CerrarConex();
+            return locations;
         }
 
         // Clave y IV codificados en Base64
