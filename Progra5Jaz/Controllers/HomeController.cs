@@ -13,31 +13,30 @@ namespace Progra5Jaz.Controllers
         Datos datos=new Datos();
 
 
+        [HttpPost]
+        public ContentResult AjaxLogin(string correo, string contrasena)
+        {
+            if (datos.login(correo, contrasena))
+            {
+                datos.CorreoCodigo(correo);
+                Session["Email"] = correo;
+                return Content("{\"success\": true, \"message\": \"\"}", "application/json");
+            }
+            else
+            {
+                return Content("{\"success\": false, \"message\": \"Credenciales Incorrectas\"}", "application/json");
+            }
+        }
+
+
+
         // GET: Login
         public ActionResult Index()
         {
-            //ViewBag.Mensaje = Session["Recupero"];
             
-            if (Request.Form.AllKeys.Contains("Ingresar"))
-            {
-                string Correo = Request.Form["Correo"];
-                string Contrasena = Request.Form["Contrasena"];
-
-                if (datos.login(Correo, Contrasena))
-                {
-                    datos.CorreoCodigo(Correo);
-                    Session["Email"] = Correo;
-                    return RedirectToAction("DobleFact", "Home");
-                }
-                else
-                {
-                    ViewBag.Message = "Credenciales Incorectas";
-                    ViewBag.icono = "error";
-                }
-                
-            }
             return View();
-        }
+       }
+
 
 
         //Doble factor 

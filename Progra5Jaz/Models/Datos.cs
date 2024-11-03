@@ -135,6 +135,13 @@ namespace Progra5Jaz.Models
             return mesage;
         }
 
+        public class Usuario
+        {
+            public string Correo { get; set; }
+            public string Contrasena { get; set; }
+        }
+
+
         //Login
         public bool login(string Correo, string Contrasena)
         {
