@@ -62,6 +62,106 @@ body {
 }
 
 
+
+/* Menu */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Comportamiento del menú en pantallas grandes */
+@media (min-width: 768px) {
+    .navbar-nav {
+        flex-direction: row; /* Menú horizontal en pantallas grandes */
+        position: relative;
+    }
+
+        .navbar-nav .nav-item {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+    /* Submenú solo se muestra al pasar el mouse */
+    li.nav-item:hover ul.inactive {
+        display: block;
+        opacity: 1;
+    }
+
+    ul.inactive li a {
+        background-color: #f3e9ca;
+        color: #0c0c0c;
+    }
+
+    /* Restablecer estilos para pantallas grandes */
+    #navbarNav {
+        display: block;
+    }
+}
+
+/* Comportamiento del menú en pantallas pequeñas */
+@media (max-width: 767px) {
+    #navbarNav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        padding: 20px;
+        display: block;
+        box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+        text-align: right;
+    }
+
+    .neon-effect {
+        font-size: 20px;
+    }
+
+    ul.inactive {
+        display: none; /* Ocultar submenús */
+    }
+
+    li.nav-item:hover ul.inactive {
+        display: block; /* Mostrar submenú al pasar el mouse */
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        background-color: #555;
+        width: 100%;
+    }
+
+    ul.inactive li a {
+        color: #fff;
+        text-align: right;
+        padding: 10px;
+        border: none;
+        background-color: #444;
+    }
+
+        ul.inactive li a:hover {
+            background-color: #333;
+        }
+
+    /* Colocar un pequeño espacio entre el menú y el borde derecho */
+    .navbar-nav {
+        margin-top: 10px;
+    }
+}
+
+
+
 .nav-item a{
     background-color:floralwhite
 }
@@ -582,3 +682,6 @@ a.neon-effect.Dorado {
     .radio-input input[type="radio"] {
         display: none; /* Hide the radio buttons */
     }
+
+
+

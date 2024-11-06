@@ -49,6 +49,8 @@ namespace Progra5Jaz.Models
             public int Distrito { get; set; }
         }
 
+
+        //Escribir el json de ubicaciones
         public void EscribirJson()
         {
             // Obtener la ruta física del archivo
@@ -83,6 +85,8 @@ namespace Progra5Jaz.Models
                 }
             }
         }
+
+        //Ubicaciones
         private List<Location> LeerBd()
         {
             var locations = new List<Location>();
@@ -118,6 +122,8 @@ namespace Progra5Jaz.Models
         public byte[] Key { get => key; set => key = value; }
         public byte[] IV { get => iV; set => iV = value; }
 
+
+        //Encriptar
         public static byte[] Encriptar(string plainText, byte[] Key, byte[] IV)
         {
             byte[] encrypted;
@@ -143,6 +149,7 @@ namespace Progra5Jaz.Models
             return encrypted;
         }
 
+        //DESENCRIPTAR
         public string Desencriptar(byte[] cipherText, byte[] Key, byte[] IV)
         {
             string plaintext = null;

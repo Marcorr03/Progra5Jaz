@@ -29,6 +29,7 @@ inputs.forEach((input, index) => {
 });
 
 
+//Contraseña 
 const pass = document.getElementById('Contrasena');
 var caracteres = 0;
 var letrasMin = 0;
