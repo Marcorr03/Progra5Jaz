@@ -224,34 +224,53 @@ namespace Progra5Jaz.Models
 
 
         //Login
-        public bool login(string Correo, string Contrasena)
+        //public bool login(string Correo, string Contrasena)
+        //{
+        //    AbrirConex();
+        //    using (SqlCommand command = new SqlCommand())
+        //    {
+        //        // La consulta SQL para insertar los valores
+        //        string sql = "Select Correo,Contrasena from Usuarios where Correo= @Correo and Contrasena=@Contrasena";
+
+        //        // Asignar la consulta SQL al SqlCommand
+        //        command.CommandText = sql;
+        //        command.Connection = conexion;
+
+
+        //        // Asignar los parámetros correspondientes
+        //        byte[] correoEncriptada = Encriptar(Correo, Key, IV);
+        //        command.Parameters.AddWithValue("@Correo", correoEncriptada);
+        //        byte[] contrasenaEncriptada = Encriptar(Contrasena, Key, IV);
+        //        command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
+
+        //        object result = command.ExecuteScalar();
+        //        CerrarConex();
+        //        if (result != null)
+        //        {
+        //            return true;
+        //        }
+        //    }
+
+        //    return false;
+        //}
+
+        public void login(string Correo, string Contrasena)
         {
-            AbrirConex();
-            using (SqlCommand command = new SqlCommand())
+            string url = "http://localhost:8000/login";
+
+            using (var content = new MultipartFormDataContent())
             {
-                // La consulta SQL para insertar los valores
-                string sql = "Select Correo,Contrasena from Usuarios where Correo= @Correo and Contrasena=@Contrasena";
+                  content.Add(new StringContent(Correo), $"dato1");
+                content.Add(new StringContent(Contrasena), $"dato2");
 
-                // Asignar la consulta SQL al SqlCommand
-                command.CommandText = sql;
-                command.Connection = conexion;
-
-
-                // Asignar los parámetros correspondientes
-                byte[] correoEncriptada = Encriptar(Correo, Key, IV);
-                command.Parameters.AddWithValue("@Correo", correoEncriptada);
-                byte[] contrasenaEncriptada = Encriptar(Contrasena, Key, IV);
-                command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
-
-                object result = command.ExecuteScalar();
-                CerrarConex();
-                if (result != null)
+                using (HttpClient client = new HttpClient())
                 {
-                    return true;
-                 }
+                    HttpResponseMessage response = client.PostAsync(url, content).Result;
+                    response.EnsureSuccessStatusCode();
+
                 }
 
-                return false;
+            }
         }
 
         ///////////////////////////////////////////////////////
