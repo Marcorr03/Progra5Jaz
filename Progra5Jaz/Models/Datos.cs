@@ -177,43 +177,73 @@ namespace Progra5Jaz.Models
         //Registro
 
         //Gestion Usuarios
+        //public string Registrar(string Ide, string Nombre, string Correo, string Telefono, string Contrasena, string FechaNa, string Vigencia, string PalabraClave)
+        //{
+        //    AbrirConex();
+        //    string mesage= "";
+        //        // Asignar la consulta SQL al SqlCommand
+        //        using (SqlCommand command = new SqlCommand("GestionUsuarios", conexion))
+        //        {
+
+        //            command.CommandType = CommandType.StoredProcedure;
+        //            // Asignar los parámetros correspondientes
+        //            command.Parameters.AddWithValue("@OP", 1);
+        //            command.Parameters.AddWithValue("@Identificacion", Ide);
+        //            command.Parameters.AddWithValue("@Nombre", Nombre);
+        //            command.Parameters.AddWithValue("@Telefono", Telefono);
+        //            command.Parameters.AddWithValue("@FechaNa", FechaNa);
+        //            command.Parameters.AddWithValue("@IdTipoUsu", 1);
+        //            command.Parameters.AddWithValue("@Vigencia", Vigencia);
+        //            byte[] correoEncriptada = Encriptar(Correo, Key, IV);
+        //            command.Parameters.AddWithValue("@Correo", correoEncriptada);
+        //            byte[] contrasenaEncriptada = Encriptar(Contrasena, Key, IV);
+        //            command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
+        //            byte[] PalabraEncriptada = Encriptar(PalabraClave, Key, IV);
+        //            command.Parameters.AddWithValue("@PalabraClave", PalabraEncriptada);
+        //            command.Parameters.AddWithValue("@Estado", "Activo");
+
+        //            SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
+        //            {
+        //                Direction = ParameterDirection.Output
+        //            };
+        //            command.Parameters.Add(sqlParameter);
+        //            // Ejecutar la consulta
+        //            command.ExecuteNonQuery();
+        //            mesage=sqlParameter.Value.ToString();
+        //    }
+
+        //    CerrarConex();
+        //    return mesage;
+        //}
+
         public string Registrar(string Ide, string Nombre, string Correo, string Telefono, string Contrasena, string FechaNa, string Vigencia, string PalabraClave)
         {
-            AbrirConex();
-            string mesage= "";
-                // Asignar la consulta SQL al SqlCommand
-                using (SqlCommand command = new SqlCommand("GestionUsuarios", conexion))
+            string url = "http://localhost:8001/registrar";
+            string message = "";
+            using (var content = new MultipartFormDataContent())
+            {
+                content.Add(new StringContent(Ide), "dato1");
+                content.Add(new StringContent(Nombre), "dato2");
+                content.Add(new StringContent(Correo), "dato3");
+                content.Add(new StringContent(Telefono), "dato4");
+                content.Add(new StringContent(Contrasena), "dato5");
+                content.Add(new StringContent(FechaNa), "dato6");
+                content.Add(new StringContent(Vigencia), "dato7");
+                content.Add(new StringContent(PalabraClave), "dato8");
+
+                using (HttpClient client = new HttpClient())
                 {
+                    HttpResponseMessage response = client.PostAsync(url, content).Result;
+                    response.EnsureSuccessStatusCode();
 
-                    command.CommandType = CommandType.StoredProcedure;
-                    // Asignar los parámetros correspondientes
-                    command.Parameters.AddWithValue("@OP", 1);
-                    command.Parameters.AddWithValue("@Identificacion", Ide);
-                    command.Parameters.AddWithValue("@Nombre", Nombre);
-                    command.Parameters.AddWithValue("@Telefono", Telefono);
-                    command.Parameters.AddWithValue("@FechaNa", FechaNa);
-                    command.Parameters.AddWithValue("@IdTipoUsu", 1);
-                    command.Parameters.AddWithValue("@Vigencia", Vigencia);
-                    byte[] correoEncriptada = Encriptar(Correo, Key, IV);
-                    command.Parameters.AddWithValue("@Correo", correoEncriptada);
-                    byte[] contrasenaEncriptada = Encriptar(Contrasena, Key, IV);
-                    command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
-                    byte[] PalabraEncriptada = Encriptar(PalabraClave, Key, IV);
-                    command.Parameters.AddWithValue("@PalabraClave", PalabraEncriptada);
-                    command.Parameters.AddWithValue("@Estado", "Activo");
+                    // Leer el contenido de la respuesta
+                    var responseData = response.Content.ReadAsStringAsync().Result;
 
-                    SqlParameter sqlParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
-                    command.Parameters.Add(sqlParameter);
-                    // Ejecutar la consulta
-                    command.ExecuteNonQuery();
-                    mesage=sqlParameter.Value.ToString();
+                    message = responseData;
+                    
+                }
             }
-            
-            CerrarConex();
-            return mesage;
+            return message;
         }
 
         public class Usuario
@@ -254,22 +284,36 @@ namespace Progra5Jaz.Models
         //    return false;
         //}
 
-        public void login(string Correo, string Contrasena)
+        public bool login(string Correo, string Contrasena)
         {
-            string url = "http://localhost:8000/login";
+            string url = "http://localhost:8001/login";
 
             using (var content = new MultipartFormDataContent())
             {
-                  content.Add(new StringContent(Correo), $"dato1");
-                content.Add(new StringContent(Contrasena), $"dato2");
+                content.Add(new StringContent(Correo), "dato1");
+                content.Add(new StringContent(Contrasena), "dato2");
 
                 using (HttpClient client = new HttpClient())
                 {
                     HttpResponseMessage response = client.PostAsync(url, content).Result;
                     response.EnsureSuccessStatusCode();
 
-                }
+                    // Leer el contenido de la respuesta
+                    var responseData = response.Content.ReadAsStringAsync().Result;
 
+                    // Deserializar el JSON de la respuesta a un objeto de C#
+                    string[] parts = responseData.Split(',');
+
+                    // Verificar si el inicio de sesión fue exitoso
+                    if (parts[0]=="1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
         }
 
