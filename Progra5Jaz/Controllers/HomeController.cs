@@ -377,9 +377,7 @@ namespace Progra5Jaz.Controllers
 
 
                         string Mensaje = datos.Registrar(Ide, Nombre, Correo, Telefono, Contrasena, FechaNa, Vigencia, PalabraClave);
-                        if (Mensaje == "El usuario registrado")
-
-
+                        if (Mensaje == "Tu solicitud se proceso correctamente")
 
                         {
                             ViewBag.icono = "success";
