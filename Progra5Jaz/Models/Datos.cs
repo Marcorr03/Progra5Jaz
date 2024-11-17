@@ -666,7 +666,8 @@ public DataTable Spa()
             List<Servicio> Sercicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
 
             // Convertir la lista de objetos a DataTable
-            dt = ConvertToDataTable(Sercicios);
+            
+                    dt = ConvertToDataTable(Sercicios);
         }
 
     }
@@ -677,6 +678,8 @@ public DataTable Spa()
             public int Id { get; set; }
             public string Nombre { get; set; }
             public string Descripcion { get; set; }
+            public decimal Precio { get; set; }
+            public string Imagen { get; set; }
             // Agregar otras propiedades según la respuesta de la API
         }
 

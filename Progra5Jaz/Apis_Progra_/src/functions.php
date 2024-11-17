@@ -408,6 +408,10 @@ function obtenerServiciosPorCategoria($idCategoria) {
 
     $resultados = [];
     while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+    // Convertir la columna Imagen a base64
+    if (isset($row['Imagen']) && !is_null($row['Imagen'])) {
+        $row['Imagen'] = base64_encode($row['Imagen']);
+    }
         $resultados[] = convertToUtf8($row);
     }
 
