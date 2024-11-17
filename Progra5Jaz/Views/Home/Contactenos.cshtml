@@ -78,76 +78,25 @@
     <div>
         <img src="~/IMA/spa2.jpg" alt="">
         <!-- FORM -->
-        <form class="Contactenos" method="post" action="~/Home/SpaAdm" enctype="multipart/form-data">
+        <form class="Contactenos" method="post" action="~/Home/Contactenos" enctype="multipart/form-data">
             <div class="container mt-5 transparente " style=" width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);">
-                <h2 class="text-center mb-4">Gestion Servicios</h2>
+                <h2 class="text-center mb-4">Envianos un Mensaje</h2>
 
                 <div class="mb-3">
-                    <label for="Nombre" class="form-label">Nombre Servicio</label>
-                    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Masaje Relajante" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="Descripcion" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Centro de masajes" required>
+                    <label for="Correo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="Correo" name="Correo" placeholder="usuario@gmail.com" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="Categoria" class="form-label">Categoria</label>
-                    <input type="text" class="form-control" id="Categoria" name="Categoria" placeholder="1" required>
+                    <label for="Mensaje" class="form-label">Mensaje</label>
+                    <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder=" " required>
                 </div>
-
-                <div class="mb-3">
-                    <label for="Precio" class="form-label">Precio </label>
-                    <input type="text" class="form-control" id="Precio" name="Precio" placeholder="6000" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="imagen" class="form-label">Imagen</label>
-                    <input type="file" class="form-control" id="picture" accept="image/*" name="picture" required>
-                </div>
-
-                <div id="imagen" class="mb-4">
-                    <img alt="No a seleccionado" name="img" id="img" />
-                </div>
-                <script>
-
-                    // Crear contenedor para la imagen y el botón
-                    document.getElementById('picture').addEventListener('change', function (event) {
-                        var file = event.target.files[0];
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            // Crear la imagen
-
-                            var img = document.getElementById('img');
-                            img.src = e.target.result;
-                            img.value = e.target.result.toString();
-                            img.style.width = '100%';
-
-                            // Añadir la imagen y el botón al contenedor
-                            document.getElementById('imagen').innerHTML = '';
-                            document.getElementById('imagen').appendChild(img);
-
-                            if (document.getElementById('imagen').childElementCount == 0) {
-                                document.getElementById('imagen').style.display = 'none';
-                            } else {
-                                document.getElementById('imagen').style.display = 'block';
-                            }
-                        };
-                        if (file) {
-                            reader.readAsDataURL(file);
-                        }
-                    });
-                </script>
 
                 <br />
                 <br />
                 <br />
                 <div style="display:flex">
-                    <button type="submit" class="Dorado" name="Registrar" value="Registrar">Registrar</button>
-                    <button type="submit" class="Dorado" name="Modificar" value="Modificar">Modificar</button>
-                    <button type="submit" class="Dorado" name="Eliminar" value="Eliminar">Eliminar</button>
-                    <button type="submit" class="Dorado" name="Buscar" value="Buscar">Buscar</button>
+                    <button type="submit" class="Dorado" name="Registrar" value="Registrar">Enviar</button>
                 </div>
             </div>
             <div class="Tabla">

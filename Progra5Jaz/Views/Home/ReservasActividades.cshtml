@@ -15,7 +15,24 @@
     <link rel="stylesheet" href="~/CSS/style.css">
 </head>
 <body>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+     var texto = '@ViewBag.Message';
+     var icono= '@ViewBag.icono';
+      if (texto) {
+          Swal.fire({
+              title: texto,
+              text: "Click para continuar",
+              icon: icono,
+              //confirmButtonColor: '#3085d6',  // Color del botón de confirmación
+              //cancelButtonColor: '#d33',      // Color del botón de cancelación (si es aplicable)
+              //confirmButtonText: 'Aceptar',   // Texto del botón de confirmación
+              customClass: {
+                  confirmButton: 'Dorado'
+              }
+          });
+      }
+    </script>
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
         <img class="LOGO" src="~/IMG/logo.jpeg" alt="">
@@ -24,39 +41,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav" style="position: static;">
             <ul class="navbar-nav">
-                <div style="padding-bottom:30px ;">
                 <li class="nav-item">
-                    <a class="neon-effect Dorado" href="menu.html">Home</a>
+                    <a class="neon-effect Dorado" href="~/Home/Menu"><img width="50" src="~/IMG/Home.png"></a>
                 </li>
-        </div>
-        <div>
-            <li class="nav-item">
-                <a class="neon-effect Dorado " href="nosotros.html">Sobre Nosotros</a>
-            </li>
-        </div>
-        <div>
-            <li class="nav-item">
-                <a class="neon-effect Dorado" href="">Servicios</a>
-                <ul class="inactive"><li><a href="">SPA</a></li> <li><a href="">ESTETICA</a></li><li><a href="">MANICURE & PEDICURE</a></li></ul>
-            </li>
-        </div>
-        <div>
-            <li class="nav-item">
-                <a class="neon-effect Dorado" href="">Reservas</a>
-                <ul class="inactive"><li><a href="">SPA</a></li> <li><a href="">ESTETICA</a></li><li><a href="">MANICURE & PEDICURE</a></li></ul>
-            </li>
-        </div>
-        <div>
-            <li class="nav-item">
-                <a class="neon-effect Dorado" href="registro.html">Registro</a>
-            </li>
-        </div>
-        <div>
-            <li class="nav-item"></li>
-            <a class="neon-effect Dorado" href="contactenos.html">Contactenos</a>
-            </li>
-        </div>
-        </ul>
+                <li class="nav-item">
+                    <a class="neon-effect Dorado " href="~/Home/Nosotros"><img width="50" src="~/IMG/Empresa.png"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="neon-effect Dorado" href="servicios.html"><img width="50" src="~/IMG/sERVICIOS.png"></a>
+                    <ul class="inactive"><li><a href="~/Home/SpaCli"><img width="30" src="~/IMG/iconospa.png"></a></li> <li><a href="~/Home/EsteticaCli"><img width="30" src="~/IMG/Iconoestetica.png"></a></li><li><a href="~/Home/ManPedCli"><img width="30" src="~/IMG/Manicurea.png"></a></li></ul>
+                </li>
+                <li class="nav-item">
+                    <a class="neon-effect Dorado" href="~/Home/Reservas"><img width="50" src="~/IMG/Reservas.png"></a>
+                    <ul class="inactive"><li><a href="~/Home/ReservasServicios"><img width="30" src="~/IMG/Servicios (2).png"></a></li> <li><a href="~/Home/ReservasPromos"><img width="30" src="~/IMG/Promos.png"></a></li><li><a href="~/Home/ReservasActividades"><img width="30" src="~/IMG/festejo.png"></a></li></ul>
+                </li>
+                <li class="nav-item">
+                    <a class="neon-effect Dorado " href="~/Home/Contactenos"><img width="50" src="~/IMG/contacto.png"></a>
+                </li>
+            </ul>
         </div>
         <div>
             <a href="#" class="btn btn-carrito"><img src="~/IMG/NOTIFI.png" alt=""></a>
@@ -74,7 +76,7 @@
     <div>
         <img src="~/IMA/spa2.jpg" alt="">
         <!-- FORM -->
-        <form class="Contactenos" method="post" action="~/Home/Registro">
+        <form class="Contactenos" method="post" action="~/Home/ReservasActividades">
             <div class="container mt-5 transparente " style=" width: 50%; background-color: rgba(141, 138, 116, 0.5); color: rgb(209, 187, 127);">
                 <h2 class="text-center mb-4">Registro</h2>
 
@@ -107,8 +109,15 @@
                     <label for="mensaje" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="Contrasena" name="Contrasena" rows="4" placeholder="Escribe tu contraseña" required>
                 </div>
-
-                <button type="submit" class="Dorado" name="Enviar" value="Enviar">Enviar</button>
+                <br />
+                <br />
+                <br />
+                <div style="display:flex">
+                    <button type="submit" class="Dorado" name="Registrar" value="Registrar">Registrar</button>
+                    <button type="submit" class="Dorado" name="Modificar" value="Modificar">Modificar</button>
+                    <button type="submit" class="Dorado" name="Eliminar" value="Eliminar">Eliminar</button>
+                    <button type="submit" class="Dorado" name="Buscar" value="Buscar">Buscar</button>
+                </div>
             </div>
             <div class="Tabla">
                 <table>
@@ -120,7 +129,7 @@
 
     <!-- Footer -->
     <footer class="text-center mt-4 Dorado">
-        <p style="padding-bottom: 0%;">&copy; 2024 Crepitas. Desarrollado por Jazmin Masis V. Todos los derechos reservados.</p>
+        <p style="padding-bottom: 0%;">&copy; 2024 Luxury Dreams. Desarrollado por Jazmin Masis V. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Enlace a Bootstrap JS y dependencias de JavaScript -->

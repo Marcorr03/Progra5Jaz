@@ -1,4 +1,24 @@
-﻿.card-img-top {
+﻿#imagen {
+    display: none;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    background-color: #79857c;
+    padding: 3px;
+    border-radius: 2%;
+    border: 2px solid #000000;
+    height: auto;
+    width: 340px;
+}
+
+.row {
+    gap: 20px;
+    justify-content: center;
+}
+
+
+
+.card-img-top {
     width: 330px;
     height: 250px;
     margin: auto;
@@ -35,12 +55,127 @@ body {
     border-radius: 10%;
 }
 
+
 .agregar:hover {
     transition:all 1s;
     transform:scale(1.2)
 }
 
-.row {
+
+
+/* Menu */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Comportamiento del menú en pantallas grandes */
+@media (min-width: 768px) {
+    .navbar-nav {
+        flex-direction: row; /* Menú horizontal en pantallas grandes */
+        position: relative;
+    }
+
+        .navbar-nav .nav-item {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+    /* Submenú solo se muestra al pasar el mouse */
+    li.nav-item:hover ul.inactive {
+        display: block;
+        opacity: 1;
+    }
+
+    ul.inactive li a {
+        background-color: #f3e9ca;
+        color: #0c0c0c;
+    }
+
+    /* Restablecer estilos para pantallas grandes */
+    #navbarNav {
+        display: block;
+    }
+}
+
+/* Comportamiento del menú en pantallas pequeñas */
+@media (max-width: 767px) {
+    #navbarNav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        padding: 20px;
+        display: block;
+        box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+        text-align: right;
+    }
+
+    .neon-effect {
+        font-size: 20px;
+    }
+
+    ul.inactive {
+        display: none; /* Ocultar submenús */
+    }
+
+    li.nav-item:hover ul.inactive {
+        display: block; /* Mostrar submenú al pasar el mouse */
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        background-color: #555;
+        width: 100%;
+    }
+
+    ul.inactive li a {
+        color: #fff;
+        text-align: right;
+        padding: 10px;
+        border: none;
+        background-color: #444;
+    }
+
+        ul.inactive li a:hover {
+            background-color: #333;
+        }
+
+    /* Colocar un pequeño espacio entre el menú y el borde derecho */
+    .navbar-nav {
+        margin-top: 10px;
+    }
+}
+
+
+
+.nav-item a{
+    background-color:floralwhite
+}
+
+.btnMenu {
+    width: 45px;
+    transition: all 1s;
+    height: 45px;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: -18px;
+    box-shadow: 0 0 10px #f1a204;
+    padding: 2px;
+    border-radius: 10%;
     gap: 10px;
     justify-content: center;
 }
@@ -99,14 +234,15 @@ footer {
 
 .neon-effect {
     color: rgb(12, 11, 11);
-    font-size: 22px;
+    font-size: 50px;
     padding: 10px;
     transition: all 0.3s ease;
     text-decoration-line: none;
+    background-color: rgb(240, 231, 203);
 }
 
     .neon-effect:hover {
-        background-color: #0c0c0c;
+        background-color: rgb(240, 231, 203);
         color: rgb(5, 5, 5);
         text-shadow: 0 0 5px #77530a, 0 0 10px #8f630b, 0 0 20px rgb(196, 144, 12), 0 0 40px #252421, 0 0 80px rgb(214, 190, 52);
         border-color: #ffd277;
@@ -159,8 +295,7 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 90%;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.842);
     background-size: 200%;
@@ -270,3 +405,283 @@ a.neon-effect.Dorado {
     text-align: center; /* Centra el texto dentro del div */
     margin-bottom: 30px; /* Espacio entre secciones */
 }
+
+.buttons-container {
+    width: 400px;
+    justify-items: left;
+    height: 300px;
+    display: none;
+    padding-bottom: 10px;
+}
+
+#checklist {
+    --check: #ad7b17;
+    --disabled: #c3c8de;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    padding: 10px;
+    grid-template-columns: 20px auto;;
+    align-items: flex-start;
+    justify-content: left;
+    width: 300px;
+    margin-left:0;
+}
+
+    #checklist label {
+        color: rgba(255, 255, 255, 0.5);
+        position: relative;
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        transition: color 0.5s ease;
+        margin-right: auto;
+        font: 20px;
+    }
+
+        #checklist label::before, #checklist label::after {
+            content: "";
+            position: absolute;
+        }
+
+
+        #checklist label:after {
+            height: 4px;
+            width: 4px;
+            left: -25px;
+            border-radius: 50%;
+        }
+
+    #checklist input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+        height: 15px;
+        width: 15px;
+        outline: none;
+        border: 0;
+        margin: 0 15px 0 0;
+        cursor: pointer;
+        background: var(--background);
+        align-items: center;
+        margin-right: 20px;
+    }
+
+        #checklist input[type="checkbox"]::before, #checklist input[type="checkbox"]::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            top: auto;
+            background: var(--check);
+            border-radius: 2px;
+        }
+
+        #checklist input[type="checkbox"]::before {
+            width: 0px;
+            right: 60%;
+        }
+
+        #checklist input[type="checkbox"]::after {
+            width: 0px;
+            left: 40%;
+        }
+
+        #checklist input[type="checkbox"]:checked::before {
+            animation: check-01 0.4s ease forwards;
+        }
+
+        #checklist input[type="checkbox"]:checked::after {
+            animation: check-02 0.4s ease forwards;
+        }
+
+        #checklist input[type="checkbox"]:checked + label {
+            color: var(--check);
+            animation: move 0.3s ease 0.1s forwards;
+        }
+
+            #checklist input[type="checkbox"]:checked + label::before {
+                background-color:transparent;
+                animation: slice 0.4s ease forwards;
+            }
+
+            #checklist input[type="checkbox"]:checked + label::after {
+                animation: firework 0.5s ease forwards 0.1s;
+            }
+
+@keyframes move {
+    50% {
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+
+    100% {
+        padding-right: 0px;
+    }
+}
+
+@keyframes slice {
+    60% {
+        width: 100%;
+        left: 4px;
+    }
+
+    100% {
+        width: 100%;
+        left: -2px;
+        padding-left: 0;
+    }
+}
+
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #2e2e2e;
+    color: #e1e1e1;
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+    .close:hover {
+        background-color: #fa5656;
+        color: #ffffff;
+    }
+
+.form1 {
+    --black: #000000;
+    --ch-black: #141414;
+    --eer-black: #1b1b1b;
+    --night-rider: #2e2e2e;
+    --white: #ffffff;
+    --af-white: #f3f3f3;
+    --ch-white: #e1e1e1;
+    --tomato: #fa5656;
+    font-family: Helvetica, sans-serif;
+    padding: 25px;
+    display: flex;
+    max-width: 420px;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    color: var(--af-white);
+    background-color: var(--black);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+    margin: auto;
+    top: 100px;
+}
+
+    .form1 .input-fields {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+        .form1 .input-fields input {
+            height: 2.5em;
+            width: 2.5em;
+            outline: none;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.5rem;
+            color: var(--af-white);
+            border-radius: 5px;
+            border: 2.5px solid var(--eer-black);
+            background-color: var(--eer-black);
+        }
+
+            .form1 .input-fields input:focus {
+                border: 1px solid var(--af-white);
+                box-shadow: inset 10px 10px 10px rgba(0, 0, 0, .15);
+                transform: scale(1.05);
+                transition: 0.5s;
+            }
+
+.action-btns {
+    display: flex;
+    margin-top: 20px;
+    gap: 0.5rem;
+}
+
+.info {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.radio-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+    .radio-input * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .radio-input label {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0px 20px;
+        cursor: pointer;
+        height: 50px;
+        position: relative;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+        .radio-input label::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 45px;
+            z-index: -1;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+
+    .radio-input input[type="radio"]:checked + label {
+        background-color: #2d3750;
+        border: 2px solid #435dd8;
+        height: 50px;
+    }
+
+    .radio-input .text {
+        color: #fff;
+    }
+
+    .radio-input input[type="radio"] {
+        display: none; /* Hide the radio buttons */
+    }
+
+
+
