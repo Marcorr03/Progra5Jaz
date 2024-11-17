@@ -425,6 +425,7 @@ function obtenerServiciosPorCategoria($idCategoria) {
 }
 
 
+
 function registrar($Ide, $Nombre, $Correo, $Telefono, $Contrasena, $FechaNa, $Vigencia, $PalabraClave) {
     $conn = getConnection();
     if ($conn === false) {

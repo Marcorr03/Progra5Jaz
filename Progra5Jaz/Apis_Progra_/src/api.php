@@ -153,8 +153,38 @@ switch ($method) {
                 return ["success" => false, "error" => "Faltan parámetros de correo o contraseña"];
             }
         }
-        // MostrarServicios
+        // MostrarSpa
         else if ($path == 'Spa') {
+            if (isset($_POST["dato1"])) {
+
+                $idCategoria = $_POST["dato1"];
+                // Llamar a la función para obtener los servicios
+                $result = obtenerServiciosPorCategoria($idCategoria);
+
+                // Devolver la respuesta como JSON
+                return $result;
+            } else {
+                // Si falta el parámetro, devolver un error
+                return ["success" => false, "error" => "Faltan parámetros de id"];
+            }
+        }
+         // MostrarMedped
+        else if ($path == 'Medped') {
+            if (isset($_POST["dato1"])) {
+
+                $idCategoria = $_POST["dato1"];
+                // Llamar a la función para obtener los servicios
+                $result = obtenerServiciosPorCategoria($idCategoria);
+
+                // Devolver la respuesta como JSON
+                return $result;
+            } else {
+                // Si falta el parámetro, devolver un error
+                return ["success" => false, "error" => "Faltan parámetros de id"];
+            }
+        }
+         // MostrarEstetica
+        else if ($path == 'Estetica') {
             if (isset($_POST["dato1"])) {
 
                 $idCategoria = $_POST["dato1"];

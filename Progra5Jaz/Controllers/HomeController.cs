@@ -299,9 +299,7 @@ namespace Progra5Jaz.Controllers
             }
             foreach (DataRow row in tabla.Rows)
             {
-                byte[] imagenBytes = (byte[])row["Imagen"];
-                string imagenBase64 = Convert.ToBase64String(imagenBytes);
-                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"].ToString()}";
                 row["ImagenDataUrl"] = imagenDataUrl;
             }
             ViewBag.ManPed = tabla;
@@ -320,9 +318,7 @@ namespace Progra5Jaz.Controllers
             }
             foreach (DataRow row in tabla.Rows)
             {
-                byte[] imagenBytes = (byte[])row["Imagen"];
-                string imagenBase64 = Convert.ToBase64String(imagenBytes);
-                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"].ToString()}";
                 row["ImagenDataUrl"] = imagenDataUrl;
             }
             ViewBag.Estetica = tabla;

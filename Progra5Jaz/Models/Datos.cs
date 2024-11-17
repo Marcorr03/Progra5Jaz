@@ -663,11 +663,18 @@ public DataTable Spa()
             string responseBody = response.Content.ReadAsStringAsync().Result;
 
             // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
-            List<Servicio> Sercicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
+            List<Servicio> Servicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
+
+            // Verificar si la lista es nula o vacía
+            if (Servicios == null || !Servicios.Any())
+            {
+                // Lanzar una excepción con un mensaje o manejar el caso de otra manera
+                throw new Exception("No hay servicios disponibles para mostrar.");
+            }
 
             // Convertir la lista de objetos a DataTable
             
-                    dt = ConvertToDataTable(Sercicios);
+                    dt = ConvertToDataTable(Servicios);
         }
 
     }
@@ -709,59 +716,131 @@ public DataTable Spa()
         //}
 
 
-
-        //Vista Estetica
+        //Vista Estetica API
         public DataTable Estetica()
         {
+            // Inicializar el DataTable
             DataTable dt = new DataTable();
+            string url = "http://localhost:8001/Estetica";
 
-            AbrirConex();
-            using (SqlCommand command = new SqlCommand())
+            using (var content = new MultipartFormDataContent())
             {
-                // La consulta SQL para insertar los valores
-                string sql = "Select * from Servicios where IdCategoriaSer = 3 ";
-
-                // Asignar la consulta SQL al SqlCommand
-                command.CommandText = sql;
-                command.Connection = conexion;
-
-                using (SqlDataAdapter da = new SqlDataAdapter(command))
+                content.Add(new StringContent("3"), $"dato1");
+                using (HttpClient client = new HttpClient())
                 {
-                    da.Fill(dt);
+                    HttpResponseMessage response = client.PostAsync(url, content).Result;
+                    response.EnsureSuccessStatusCode();
+                    // Leer el contenido de la respuesta
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
+
+                    // Verificar si la lista es nula o vacía
+                    if (responseBody == null || !responseBody.Any())
+                    {
+                        return null;
+                    }
+
+                    // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
+                    List<Servicio> Servicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
+
+
+                    // Convertir la lista de objetos a DataTable
+
+                    dt = ConvertToDataTable(Servicios);
                 }
-                CerrarConex();
-                return dt;
+
             }
+            return dt;
         }
 
+        //Vista Estetica BD
+        //public DataTable Estetica()
+        //{
+        //    DataTable dt = new DataTable();
+
+        //    AbrirConex();
+        //    using (SqlCommand command = new SqlCommand())
+        //    {
+        //        // La consulta SQL para insertar los valores
+        //        string sql = "Select * from Servicios where IdCategoriaSer = 3 ";
+
+        //        // Asignar la consulta SQL al SqlCommand
+        //        command.CommandText = sql;
+        //        command.Connection = conexion;
+
+        //        using (SqlDataAdapter da = new SqlDataAdapter(command))
+        //        {
+        //            da.Fill(dt);
+        //        }
+        //        CerrarConex();
+        //        return dt;
+        //    }
+        //}
 
 
 
-
-
-        //Vista ManPed
+        //Vista ManPed API
         public DataTable ManPed()
         {
+            // Inicializar el DataTable
             DataTable dt = new DataTable();
+            string url = "http://localhost:8001/Estetica";
 
-            AbrirConex();
-            using (SqlCommand command = new SqlCommand())
+            using (var content = new MultipartFormDataContent())
             {
-                // La consulta SQL para insertar los valores
-                string sql = "Select * from Servicios where IdCategoriaSer = 2 ";
+                content.Add(new StringContent("2"), $"dato1");
+                using (HttpClient client = new HttpClient())
 
-                // Asignar la consulta SQL al SqlCommand
-                command.CommandText = sql;
-                command.Connection = conexion;
 
-                using (SqlDataAdapter da = new SqlDataAdapter(command))
+
                 {
-                    da.Fill(dt);
+                    HttpResponseMessage response = client.PostAsync(url, content).Result;
+                    response.EnsureSuccessStatusCode();
+                    // Leer el contenido de la respuesta
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
+
+                    // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
+                    List<Servicio> Servicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
+
+                    // Verificar si la lista es nula o vacía
+                    if (Servicios == null || !Servicios.Any())
+                    {
+                        // Lanzar una excepción con un mensaje o manejar el caso de otra manera
+                        throw new Exception("No hay servicios disponibles para mostrar.");
+                    }
+
+                    // Convertir la lista de objetos a DataTable
+
+                    dt = ConvertToDataTable(Servicios);
                 }
-                CerrarConex();
-                return dt;
+
             }
+            return dt;
         }
+
+
+        //Vista ManPed BD
+        //public DataTable ManPed()
+        //{
+        //    DataTable dt = new DataTable();
+
+        //    AbrirConex();
+        //    using (SqlCommand command = new SqlCommand())
+        //    {
+        //        // La consulta SQL para insertar los valores
+        //        string sql = "Select * from Servicios where IdCategoriaSer = 2 ";
+
+        //        // Asignar la consulta SQL al SqlCommand
+        //        command.CommandText = sql;
+        //        command.Connection = conexion;
+
+        //        using (SqlDataAdapter da = new SqlDataAdapter(command))
+        //        {
+        //            da.Fill(dt);
+        //        }
+        //        CerrarConex();
+        //        return dt;
+        //    }
+        //}
 
 
 
