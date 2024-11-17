@@ -154,18 +154,11 @@ function LeerBD() {
         return ["success" => false, "error" => "Error al realizar la consulta", "details" => sqlsrv_errors()];
     }
 
-    $resultados = [];
-    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-        $resultados[] = convertToUtf8($row);
-    }
 
     sqlsrv_close($conn);
 
-    if (empty($resultados)) {
-        return ["success" => true, "data" => [], "message" => "No se encontraron resultados"];
-    } else {
-        return ["success" => true, "data" => $resultados];
-    }
+        return sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+    
 }
 
 //Productos
@@ -402,7 +395,7 @@ function obtenerServiciosPorCategoria($idCategoria) {
     }
 
     // Consulta SQL para obtener los servicios por categoría
-    $sql = "SELECT Id, Nombre, Descripcion, Precio, Imagen FROM Servicios WHERE IdCategoriaSer = ?";
+    $sql = "SELECT IdServicio, Nombre, Descripcion, Precio, Imagen FROM Servicios WHERE IdCategoriaSer = ?";
 
     // Parámetros para la consulta
     $parameters = [[$idCategoria, SQLSRV_PARAM_IN]];
@@ -413,20 +406,18 @@ function obtenerServiciosPorCategoria($idCategoria) {
         return ["success" => false, "error" => "Error al ejecutar la consulta", "details" => sqlsrv_errors()];
     }
 
-    // Construir el resultado en un array
-    $result = [];
+    $resultados = [];
     while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-        // Convertir la imagen a base64
-        $row['Imagen'] = base64_encode($row['Imagen']);
-        $result[] = $row;
+        $resultados[] = convertToUtf8($row);
     }
 
-    // Liberar los recursos de la consulta y cerrar la conexión
-    sqlsrv_free_stmt($stmt);
     sqlsrv_close($conn);
 
-    // Retornar el resultado
-    return $result;
+    if (empty($resultados)) {
+        return ["success" => true, "data" => [], "message" => "No se encontraron resultados"];
+    } else {
+        echo json_encode($resultados);
+    }
 }
 
 
