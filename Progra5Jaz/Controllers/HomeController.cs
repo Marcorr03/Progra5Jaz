@@ -271,17 +271,21 @@ namespace Progra5Jaz.Controllers
         public ActionResult SpaCli()
         {
             DataTable tabla = datos.Spa();
-            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            if (tabla.ToString().Any())
             {
-                // Si no existe, agregar la nueva columna
-                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+                if (!tabla.Columns.Contains("ImagenDataUrl"))
+                {
+                    // Si no existe, agregar la nueva columna
+                    tabla.Columns.Add("ImagenDataUrl", typeof(string));
+                }
+                foreach (DataRow row in tabla.Rows)
+                {
+                    string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"]}";
+                    row["ImagenDataUrl"] = imagenDataUrl;
+                }
+                ViewBag.Spa = tabla;
             }
-            foreach (DataRow row in tabla.Rows)
-            {
-                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"].ToString()}";
-                row["ImagenDataUrl"] = imagenDataUrl;
-            }
-            ViewBag.Spa = tabla;
+            else { ViewBag.Spa = null; }
             return View();
         }
 
@@ -292,17 +296,22 @@ namespace Progra5Jaz.Controllers
         public ActionResult ManPedCli()
         {
             DataTable tabla = datos.ManPed();
-            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            if (tabla.ToString().Any())
             {
-                // Si no existe, agregar la nueva columna
-                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+                if (!tabla.Columns.Contains("ImagenDataUrl"))
+                {
+                    // Si no existe, agregar la nueva columna
+                    tabla.Columns.Add("ImagenDataUrl", typeof(string));
+                }
+                foreach (DataRow row in tabla.Rows)
+                {
+                    string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"]}";
+                    row["ImagenDataUrl"] = imagenDataUrl;
+                }
+                ViewBag.ManPed = tabla;
             }
-            foreach (DataRow row in tabla.Rows)
-            {
-                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"].ToString()}";
-                row["ImagenDataUrl"] = imagenDataUrl;
-            }
-            ViewBag.ManPed = tabla;
+            else { ViewBag.ManPed = null; }
+
             return View();
         }
 
@@ -311,17 +320,22 @@ namespace Progra5Jaz.Controllers
         public ActionResult EsteticaCli()
         {
             DataTable tabla = datos.Estetica();
-            if (!tabla.Columns.Contains("ImagenDataUrl"))
+            if (tabla.ToString().Any())
             {
-                // Si no existe, agregar la nueva columna
-                tabla.Columns.Add("ImagenDataUrl", typeof(string));
+                if (!tabla.Columns.Contains("ImagenDataUrl"))
+                {
+                    // Si no existe, agregar la nueva columna
+                    tabla.Columns.Add("ImagenDataUrl", typeof(string));
+                }
+                foreach (DataRow row in tabla.Rows)
+                {
+                    string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"]}";
+                    row["ImagenDataUrl"] = imagenDataUrl;
+                }
+                ViewBag.Estetica = tabla;
             }
-            foreach (DataRow row in tabla.Rows)
-            {
-                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"].ToString()}";
-                row["ImagenDataUrl"] = imagenDataUrl;
-            }
-            ViewBag.Estetica = tabla;
+            else {ViewBag.Estetica = null; }
+            
             return View();
         }
 

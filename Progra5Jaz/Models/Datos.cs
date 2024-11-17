@@ -646,40 +646,36 @@ public DataTable ConvertToDataTable<T>(List<T> items)
     return dataTable;
 }
 
-public DataTable Spa()
-{
-    // Inicializar el DataTable
-    DataTable dt = new DataTable();
-    string url = "http://localhost:8001/Spa";
-
-    using (var content = new MultipartFormDataContent())
-    {
-        content.Add(new StringContent("1"), $"dato1");
-        using (HttpClient client = new HttpClient())
+        public DataTable Spa()
         {
-            HttpResponseMessage response = client.PostAsync(url, content).Result;
-            response.EnsureSuccessStatusCode();
-            // Leer el contenido de la respuesta
-            string responseBody = response.Content.ReadAsStringAsync().Result;
+            // Inicializar el DataTable
+            DataTable dt = new DataTable();
+            string url = "http://localhost:8001/Spa";
 
-            // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
-            List<Servicio> Servicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
-
-            // Verificar si la lista es nula o vacía
-            if (Servicios == null || !Servicios.Any())
+            using (var content = new MultipartFormDataContent())
             {
-                // Lanzar una excepción con un mensaje o manejar el caso de otra manera
-                throw new Exception("No hay servicios disponibles para mostrar.");
-            }
+                content.Add(new StringContent("1"), $"dato1");
+                using (HttpClient client = new HttpClient())
+                {
+                    HttpResponseMessage response = client.PostAsync(url, content).Result;
+                    response.EnsureSuccessStatusCode();
+                    // Leer el contenido de la respuesta
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
+                    if (responseBody == null || !responseBody.Any())
+                    {
+                        return dt;
+                    }
+                    // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
+                    List<Servicio> Servicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
 
-            // Convertir la lista de objetos a DataTable
-            
+                    // Convertir la lista de objetos a DataTable
+
                     dt = ConvertToDataTable(Servicios);
-        }
 
-    }
-    return dt;
-}
+                }
+                return dt;
+            }
+        }
         public class Servicio
         {
             public int Id { get; set; }
@@ -736,7 +732,7 @@ public DataTable Spa()
                     // Verificar si la lista es nula o vacía
                     if (responseBody == null || !responseBody.Any())
                     {
-                        return null;
+                        return dt;
                     }
 
                     // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
