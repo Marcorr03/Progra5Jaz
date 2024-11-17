@@ -50,6 +50,7 @@ namespace Progra5Jaz.Controllers
 
 
 
+
         //Doble factor 
         public ActionResult DobleFact()
         {
@@ -266,9 +267,7 @@ namespace Progra5Jaz.Controllers
         }
 
 
-
-
-        // Vista SPA
+        //MOSTRAR SERVICIOS SPA
         public ActionResult SpaCli()
         {
             DataTable tabla = datos.Spa();
@@ -287,6 +286,8 @@ namespace Progra5Jaz.Controllers
             ViewBag.Spa = tabla;
             return View();
         }
+
+
 
 
         //Vista ManiPedi
@@ -353,7 +354,7 @@ namespace Progra5Jaz.Controllers
         }
         
 
-        //Registro
+        //Registro Clientes
         public ActionResult Registro()
         {
 

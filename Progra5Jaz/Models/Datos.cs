@@ -16,7 +16,8 @@ using System.Web;
 using Newtonsoft.Json;
 using System.Web.Hosting;
 using System.Net.Http;
-
+using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Progra5Jaz.Models
 {
@@ -316,6 +317,8 @@ namespace Progra5Jaz.Models
                 }
             }
         }
+
+
 
         ///////////////////////////////////////////////////////
         public void CambioContra(string Email)
@@ -617,29 +620,91 @@ public string RegistrarServ(string Nombre, string Desc, string Precio,string IdC
         }
 
 
-        //Vista Servicio Spa
-        public DataTable Spa()
+        // Método para convertir la lista de objetos a DataTable
+public DataTable ConvertToDataTable<T>(List<T> items)
+{
+    DataTable dataTable = new DataTable(typeof(T).Name);
+
+    // Obtener todas las propiedades públicas de la clase
+    PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+    foreach (PropertyInfo prop in Props)
+    {
+        // Establecer el nombre de la columna y el tipo de datos
+        dataTable.Columns.Add(prop.Name, prop.PropertyType);
+    }
+
+    foreach (T item in items)
+    {
+        var values = new object[Props.Length];
+        for (int i = 0; i < Props.Length; i++)
         {
-            DataTable dt = new DataTable();
-
-            AbrirConex();
-            using (SqlCommand command = new SqlCommand())
-            {
-                // La consulta SQL para insertar los valores
-                string sql = "select *from Servicios  ";
-
-                // Asignar la consulta SQL al SqlCommand
-                command.CommandText = sql;
-                command.Connection = conexion;
-
-                using (SqlDataAdapter da = new SqlDataAdapter(command))
-                {
-                    da.Fill(dt);
-                }
-                CerrarConex();
-                return dt;
-            }
+            // Insertar el valor en el array de objetos
+            values[i] = Props[i].GetValue(item, null);
         }
+        dataTable.Rows.Add(values);
+    }
+    return dataTable;
+}
+
+public DataTable Spa()
+{
+    // Inicializar el DataTable
+    DataTable dt = new DataTable();
+    string url = "http://localhost:8001/Spa";
+
+    using (var content = new MultipartFormDataContent())
+    {
+        content.Add(new StringContent("1"), $"dato{1}");
+        using (HttpClient client = new HttpClient())
+        {
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+            response.EnsureSuccessStatusCode();
+            // Leer el contenido de la respuesta
+            string responseBody = response.Content.ReadAsStringAsync().Result;
+
+            // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
+            List<Servicio> Sercicios = JsonConvert.DeserializeObject<List<Servicio>>(responseBody);
+
+            // Convertir la lista de objetos a DataTable
+            dt = ConvertToDataTable(Sercicios);
+        }
+
+    }
+    return dt;
+}
+        public class Servicio
+        {
+            public int Id { get; set; }
+            public string Nombre { get; set; }
+            public string Descripcion { get; set; }
+            // Agregar otras propiedades según la respuesta de la API
+        }
+
+
+        //Vista Servicio Spa
+        //public DataTable Spa()
+        //{
+        //    DataTable dt = new DataTable();
+
+        //    AbrirConex();
+        //    using (SqlCommand command = new SqlCommand())
+        //    {
+        //        // La consulta SQL para insertar los valores
+        //        string sql = "select *from Servicios where IdCategoriaSer = 1 ";
+
+        //        // Asignar la consulta SQL al SqlCommand
+        //        command.CommandText = sql;
+        //        command.Connection = conexion;
+
+        //        using (SqlDataAdapter da = new SqlDataAdapter(command))
+        //        {
+        //            da.Fill(dt);
+        //        }
+        //        CerrarConex();
+        //        return dt;
+        //    }
+        //}
+
 
 
         //Vista Estetica
@@ -651,7 +716,7 @@ public string RegistrarServ(string Nombre, string Desc, string Precio,string IdC
             using (SqlCommand command = new SqlCommand())
             {
                 // La consulta SQL para insertar los valores
-                string sql = "Select * from Servicios  ";
+                string sql = "Select * from Servicios where IdCategoriaSer = 3 ";
 
                 // Asignar la consulta SQL al SqlCommand
                 command.CommandText = sql;
@@ -665,6 +730,10 @@ public string RegistrarServ(string Nombre, string Desc, string Precio,string IdC
                 return dt;
             }
         }
+
+
+
+
 
 
         //Vista ManPed
@@ -676,7 +745,7 @@ public string RegistrarServ(string Nombre, string Desc, string Precio,string IdC
             using (SqlCommand command = new SqlCommand())
             {
                 // La consulta SQL para insertar los valores
-                string sql = "Select * from Servicios ";
+                string sql = "Select * from Servicios where IdCategoriaSer = 2 ";
 
                 // Asignar la consulta SQL al SqlCommand
                 command.CommandText = sql;
@@ -690,6 +759,9 @@ public string RegistrarServ(string Nombre, string Desc, string Precio,string IdC
                 return dt;
             }
         }
+
+
+
 
         //Actividades
         //Registrar
