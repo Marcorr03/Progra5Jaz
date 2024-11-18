@@ -887,30 +887,76 @@ public DataTable ConvertToDataTable<T>(List<T> items)
 
 
 
-        //Vista actividades
+        //Vista actividades BD
+        //public DataTable Actividades()
+        //{
+        //    DataTable dt = new DataTable();
+
+        //    AbrirConex();
+        //    using (SqlCommand command = new SqlCommand())
+        //    {
+        //        // La consulta SQL para insertar los valores
+        //        string sql = "Select * from Actividades ";
+
+        //        // Asignar la consulta SQL al SqlCommand
+        //        command.CommandText = sql;
+        //        command.Connection = conexion;
+
+        //        using (SqlDataAdapter da = new SqlDataAdapter(command))
+        //        {
+        //            da.Fill(dt);
+        //        }
+        //        CerrarConex();
+        //        return dt;
+        //    }
+        //}
+
+
+
+        //Vista actividades API
         public DataTable Actividades()
         {
+            // Inicializar el DataTable
             DataTable dt = new DataTable();
+            string url = "http://localhost:8001/Actividades";
 
-            AbrirConex();
-            using (SqlCommand command = new SqlCommand())
+            using (HttpClient client = new HttpClient())
             {
-                // La consulta SQL para insertar los valores
-                string sql = "Select * from Actividades ";
+                HttpResponseMessage response = client.PostAsync(url, null).Result;
+                response.EnsureSuccessStatusCode();
 
-                // Asignar la consulta SQL al SqlCommand
-                command.CommandText = sql;
-                command.Connection = conexion;
+                // Leer el contenido de la respuesta
+                string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                using (SqlDataAdapter da = new SqlDataAdapter(command))
+                // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
+                List<Actividadees> Actividades = JsonConvert.DeserializeObject<List<Actividadees>>(responseBody);
+
+                // Verificar si la lista es nula o vacía
+                if (Actividades == null || !Actividades.Any())
                 {
-                    da.Fill(dt);
+                    // Lanzar una excepción con un mensaje o manejar el caso de otra manera
+                    throw new Exception("No hay actividades disponibles para mostrar.");
                 }
-                CerrarConex();
-                return dt;
+
+                // Convertir la lista de objetos a DataTable
+
+
+                dt = ConvertToDataTable(Actividades);
+
             }
+            return dt;
         }
 
+        public class Actividadees
+        {
+            public int IdPromo { get; set; }
+            public string Imagen { get; set; }
+            public string Actividad { get; set; }
+            public string Descripcion { get; set; }
+            public string CantPersonas { get; set; }
+            public decimal Precio { get; set; }
+
+        }
 
 
         //Gestion Promos
@@ -953,31 +999,79 @@ public DataTable ConvertToDataTable<T>(List<T> items)
             return Mensaje;
         }
 
-        //Vista promos
-        public DataTable Promos()
+        ////Vista promos BD
+        //public DataTable Promos()
+        //{
+        //    DataTable dt = new DataTable();
+
+        //    AbrirConex();
+        //    using (SqlCommand command = new SqlCommand())
+        //    {
+        //        // La consulta SQL para insertar los valores
+        //        string sql = "Select * from Promos ";
+
+        //        // Asignar la consulta SQL al SqlCommand
+        //        command.CommandText = sql;
+        //        command.Connection = conexion;
+
+        //        using (SqlDataAdapter da = new SqlDataAdapter(command))
+        //        {
+        //            da.Fill(dt);
+        //        }
+        //        CerrarConex();
+        //        return dt;
+        //    }
+        //}
+
+
+        ////Vista promos API
+         public DataTable Promos()
         {
+            // Inicializar el DataTable
             DataTable dt = new DataTable();
+            string url = "http://localhost:8001/Promos";
 
-            AbrirConex();
-            using (SqlCommand command = new SqlCommand())
+            using (HttpClient client = new HttpClient())
             {
-                // La consulta SQL para insertar los valores
-                string sql = "Select * from Promos ";
+                    HttpResponseMessage response = client.PostAsync(url, null).Result;
+                    response.EnsureSuccessStatusCode();
 
-                // Asignar la consulta SQL al SqlCommand
-                command.CommandText = sql;
-                command.Connection = conexion;
+                    // Leer el contenido de la respuesta
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                using (SqlDataAdapter da = new SqlDataAdapter(command))
-                {
-                    da.Fill(dt);
-                }
-                CerrarConex();
-                return dt;
+                    // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
+                    List<Promosiones> Promos = JsonConvert.DeserializeObject<List<Promosiones>>(responseBody);
+
+                    // Verificar si la lista es nula o vacía
+                    if (Promos == null || !Promos.Any())
+                    {
+                        // Lanzar una excepción con un mensaje o manejar el caso de otra manera
+                        throw new Exception("No hay promos disponibles para mostrar.");
+                    }
+
+                    // Convertir la lista de objetos a DataTable
+
+                    dt = ConvertToDataTable(Promos);
+
             }
+            return dt;
         }
 
-        public string EnvioMensaje(string Correo, string Descripcion)
+    public class Promosiones
+    {
+        public int IdPromo { get; set; }
+        public string Imagen { get; set; }
+        public string Promo { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Precio { get; set; }
+        
+    }
+
+
+
+
+    //mENSAJE
+    public string EnvioMensaje(string Correo, string Descripcion)
         {
             string Mensaje = "";
             AbrirConex();

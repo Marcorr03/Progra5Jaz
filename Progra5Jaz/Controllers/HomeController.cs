@@ -137,9 +137,7 @@ namespace Progra5Jaz.Controllers
             }
             foreach (DataRow row in tabla.Rows)
             {
-                byte[] imagenBytes = (byte[])row["Imagen"];
-                string imagenBase64 = Convert.ToBase64String(imagenBytes);
-                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"]}";
                 row["ImagenDataUrl"] = imagenDataUrl;
             }
             ViewBag.Promos = tabla;
@@ -157,9 +155,7 @@ namespace Progra5Jaz.Controllers
             }
             foreach (DataRow row in tabla.Rows)
             {
-                byte[] imagenBytes = (byte[])row["Imagen"];
-                string imagenBase64 = Convert.ToBase64String(imagenBytes);
-                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"]}";
                 row["ImagenDataUrl"] = imagenDataUrl;
             }
             ViewBag.Promos = tabla;
@@ -202,9 +198,7 @@ namespace Progra5Jaz.Controllers
             }
             foreach (DataRow row in tabla.Rows)
             {
-                byte[] imagenBytes = (byte[])row["Imagen"];
-                string imagenBase64 = Convert.ToBase64String(imagenBytes);
-                string imagenDataUrl = $"data:image/jpeg;base64,{imagenBase64}";
+                string imagenDataUrl = $"data:image/jpeg;base64,{row["Imagen"]}";
                 row["ImagenDataUrl"] = imagenDataUrl;
             }
             ViewBag.Actividades=tabla;
@@ -418,6 +412,13 @@ namespace Progra5Jaz.Controllers
 
         //Agendar
         public ActionResult ReservasServicios()
+        {
+
+            return View();
+        }
+
+
+        public ActionResult Pago()
         {
 
             return View();

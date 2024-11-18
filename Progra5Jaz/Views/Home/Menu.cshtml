@@ -29,6 +29,31 @@
 </head>
 <body>
 
+    <script>
+        function cargarPromos() {
+            fetch('/Home/ObtenerPromos')
+                .then(response => response.json())
+                .then(servicios => {
+
+                    const contenedor = document.querySelector('.row');
+                    contenedor.innerHTML = ''; // Limpiar contenido anterior
+                    promos.forEach(promo => {
+                        contenedor.innerHTML += `
+                                <div class="card">
+                                    <img src="${promo.imagenUrl}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${promo.promo}</h5>
+                                        <p>${promo.descripcion}</p>
+                                        <h6>Precio: ${promo.precio}</h6>
+                                        <button class="btn btn-primary" onclick="reservarServicio(${promo.id})">Reservar</button>
+                                    </div>
+                                </div>`;
+                    });
+                })
+                .catch(error => console.error('Error al cargar servicios:', error));
+        }
+
+    </script>
 
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
@@ -45,11 +70,11 @@
                     <a class="neon-effect Dorado " href="~/Home/Nosotros"><img width="50" src="~/IMG/Empresa.png"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="neon-effect Dorado" ><img width="50" src="~/IMG/sERVICIOS.png"></a>
-                    <ul class="inactive"><li><a href="~/Home/SpaCli"><img width="30" src="~/IMG/iconospa.png"></a></li> <li><a href="~/Home/EsteticaCli"><img width="30" src="~/IMG/Iconoestetica.png"></a></li><li><a href="~/Home/ManPedCli"><img width="30" src="~/IMG/Manicurea.png"></a></li></ul>
+                    <a class="neon-effect Dorado"><img width="50" src="~/IMG/sERVICIOS.png"></a>
+                    <ul class="inactive"><li><a href="~/Home/SpaCli"><img width="30" src="~/IMG/iconospa.png"></a></li> <li><a href="~/Home/EsteticaCli"><img width="30" src="~/IMG/Iconoestetica.png"></a></li><li><a href="~/Home/ManPedCli"><img width="30" src="~/IMG/Manicurea.png"></a></li><li><a href="~/Home/ActividadesCli"><img width="30" src="~/IMG/festejo.png"></a></li></ul>
                 </li>
                 <li class="nav-item">
-                    <a class="neon-effect Dorado" ><img width="50" src="~/IMG/Reservas.png"></a>
+                    <a class="neon-effect Dorado"><img width="50" src="~/IMG/Reservas.png"></a>
                     <ul class="inactive"><li><a href="~/Home/ReservasServicios"><img width="30" src="~/IMG/Servicios (2).png"></a></li> <li><a href="~/Home/ReservasPromos"><img width="30" src="~/IMG/Promos.png"></a></li><li><a href="~/Home/ReservasActividades"><img width="30" src="~/IMG/festejo.png"></a></li></ul>
                 </li>
                 <li class="nav-item">

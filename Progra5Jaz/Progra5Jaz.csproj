@@ -189,6 +189,7 @@
     <Content Include="Views\Home\DobleFact.cshtml" />
     <Content Include="Views\Home\CambioContra.cshtml" />
     <Content Include="Views\Home\OlvideContra.cshtml" />
+    <Content Include="Views\Home\Pago.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

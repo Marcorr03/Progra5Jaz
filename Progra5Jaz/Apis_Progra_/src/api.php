@@ -198,6 +198,30 @@ switch ($method) {
                 return ["success" => false, "error" => "Faltan parámetros de id"];
             }
         }
+          // MostrarPromos
+        else if ($path == 'Promos') {
+                // Llamar a la función para obtener los servicios
+                $result = obtenerPromos();
+            if (empty($result)) {
+                // Devolver la respuesta como JSON
+                return $result;
+            } else {
+                // Si falta el parámetro, devolver un error
+                return ["success" => false, "error" => "Faltan parámetros de id"];
+            }
+        }
+          // MostrarActividad
+        else if ($path == 'Actividad') {
+                // Llamar a la función para obtener los servicios
+                $result = obtenerActividad();
+            if (empty($result)) {
+                // Devolver la respuesta como JSON
+                return $result;
+            } else {
+                // Si falta el parámetro, devolver un error
+                return ["success" => false, "error" => "Faltan parámetros de id"];
+            }
+        }
         else if ($path == 'EscribirP') {
             // Obtener los datos del formulario
            $datos = [];
