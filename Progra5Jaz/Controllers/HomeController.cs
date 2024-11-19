@@ -48,7 +48,16 @@ namespace Progra5Jaz.Controllers
             return View();
        }
 
-        
+        public string ConfUsu()
+        {
+            string filePath = HostingEnvironment.MapPath("~/App_Data/locations.json");
+
+            // Leer el contenido del archivo
+            string jsonData = System.IO.File.ReadAllText(filePath);
+
+            // Devolver el JSON como resultado
+            return jsonData;
+        }
 
 
         //Doble factor 
