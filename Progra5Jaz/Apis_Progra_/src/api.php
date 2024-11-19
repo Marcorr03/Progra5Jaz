@@ -211,7 +211,7 @@ switch ($method) {
             }
         }
           // MostrarActividad
-        else if ($path == 'Actividad') {
+        else if ($path == 'Actividades') {
                 // Llamar a la función para obtener los servicios
                 $result = obtenerActividad();
             if (empty($result)) {

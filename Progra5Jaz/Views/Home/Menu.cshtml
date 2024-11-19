@@ -33,7 +33,7 @@
         function cargarPromos() {
             fetch('/Home/ObtenerPromos')
                 .then(response => response.json())
-                .then(servicios => {
+                .then(promos => {
 
                     const contenedor = document.querySelector('.row');
                     contenedor.innerHTML = ''; // Limpiar contenido anterior

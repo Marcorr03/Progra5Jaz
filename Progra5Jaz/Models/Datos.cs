@@ -801,7 +801,7 @@ public DataTable ConvertToDataTable<T>(List<T> items)
                     if (Servicios == null || !Servicios.Any())
                     {
                         // Lanzar una excepción con un mensaje o manejar el caso de otra manera
-                        throw new Exception("No hay servicios disponibles para mostrar.");
+                        return dt;
                     }
 
                     // Convertir la lista de objetos a DataTable
@@ -934,8 +934,7 @@ public DataTable ConvertToDataTable<T>(List<T> items)
                 // Verificar si la lista es nula o vacía
                 if (Actividades == null || !Actividades.Any())
                 {
-                    // Lanzar una excepción con un mensaje o manejar el caso de otra manera
-                    throw new Exception("No hay actividades disponibles para mostrar.");
+                    return dt;
                 }
 
                 // Convertir la lista de objetos a DataTable
@@ -949,7 +948,7 @@ public DataTable ConvertToDataTable<T>(List<T> items)
 
         public class Actividadees
         {
-            public int IdPromo { get; set; }
+            public int IdAct { get; set; }
             public string Imagen { get; set; }
             public string Actividad { get; set; }
             public string Descripcion { get; set; }

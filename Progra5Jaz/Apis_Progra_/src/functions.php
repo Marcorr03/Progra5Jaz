@@ -470,7 +470,7 @@ function obtenerActividad() {
     }
 
     // Consulta SQL para obtener los servicios por categoría
-    $sql = "SELECT IdAct, Imagen, Promo, Descripcion,CantPersonas, Precio  FROM Actividades ";
+    $sql = "SELECT IdAct, Imagen, Actividad, Descripcion,CantPersonas, Precio  FROM Actividades ";
 
     // Ejecutar la consulta con los parámetros
     $stmt = sqlsrv_query($conn, $sql);
