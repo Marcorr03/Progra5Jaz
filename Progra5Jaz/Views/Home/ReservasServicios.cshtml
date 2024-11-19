@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Data;
 @{
     Layout = null;
 }
@@ -33,6 +33,8 @@
           });
       }
     </script>
+    
+
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
         <img class="LOGO" src="~/IMG/logo.jpeg" alt="">
@@ -61,7 +63,7 @@
             </ul>
         </div>
         <div>
-            <a href="~/Home/ConfUsu" class="btn btn-carrito"><img src="~/IMG/usu.png" alt=""></a> 
+            <a href="~/Home/ConfUsu" class="btn btn-carrito"><img src="~/IMG/usu.png" alt=""></a>
         </div>
     </nav>
 
@@ -85,9 +87,20 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="Promo" class="form-label">Servicio</label>
-                    <input type="text" class="form-control" id="Promo" name="Promo" required>
+                    <label for="Servicio" class="form-label">Servicio</label>
+                    <select id="Servicio" class="form-select">
+
+                        @if (ViewBag.Select != null)
+                        {
+                            foreach (DataRow row in ViewBag.Select.Rows)
+                            {
+                                <option value="@row["Nombre"]">@row["Nombre"]</option>
+
+                            }
+                        }
+                    </select>
                 </div>
+
 
                 <div class="mb-3">
                     <label for="Fecha" class="form-label">Fecha Reserva</label>
@@ -101,13 +114,13 @@
 
                 <div class="mb-3">
                     <label for="Precio" class="form-label">Precio</label>
-                    <input type="text" class="form-control" id="Precio" name="Precio" required>
+                    <input type="text" id="Precio" class="form-control" readonly>
                 </div>
                 <br />
                 <br />
                 <br />
                 <div style="display:flex">
-                    <button type="submit" class="Dorado" name="Registrar" value="Registrar">Reservar</button> 
+                    <button type="submit" class="Dorado" name="Registrar" value="Registrar">Reservar</button>
                 </div>
             </div>
             <div class="Tabla">

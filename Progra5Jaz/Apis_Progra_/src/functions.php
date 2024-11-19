@@ -161,6 +161,37 @@ function LeerBD() {
     
 }
 
+function obtenerServicios() {
+    // Obtener la conexión a la base de datos
+    $conn = getConnection();
+    // Verificar si la conexión fue exitosa
+    if ($conn === false) {
+        return ["success" => false, "error" => "No se pudo establecer la conexión con la base de datos", "details" => sqlsrv_errors()];
+    }
+ 
+    // Consulta SQL para obtener los servicios por categoría
+    $sql = "SELECT IdServicio,Nombre,Precio  FROM Servicios ";
+ 
+    // Ejecutar la consulta con los parámetros
+    $stmt = sqlsrv_query($conn, $sql);
+    if ($stmt === false) {
+        return ["success" => false, "error" => "Error al ejecutar la consulta", "details" => sqlsrv_errors()];
+    }
+ 
+    $resultados = [];
+    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+        $resultados[] = convertToUtf8($row);
+    }
+ 
+    sqlsrv_close($conn);
+ 
+    if (empty($resultados)) {
+        return ["success" => true, "data" => [], "message" => "No se encontraron resultados"];
+    } else {
+        echo json_encode($resultados);
+    }
+}
+
 //Productos
 function VerProductos() {
     $conn = getConnection();

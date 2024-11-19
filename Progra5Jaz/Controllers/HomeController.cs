@@ -318,6 +318,18 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
+        
+        public DataTable ObtenerServiciosSelect()
+       {
+            // Llamar al método que obtiene el DataTable
+            DataTable servicios = datos.Servicios();
+
+
+            // En caso de que el DataTable esté vacío, devolver una lista vacía
+            return servicios;
+        }
+
+
 
         // Vista Estetica
         public ActionResult EsteticaCli()
@@ -422,7 +434,7 @@ namespace Progra5Jaz.Controllers
         //Agendar
         public ActionResult ReservasServicios()
         {
-
+            ViewBag.Select=ObtenerServiciosSelect();
             return View();
         }
 

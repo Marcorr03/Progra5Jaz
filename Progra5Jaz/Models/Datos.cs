@@ -645,7 +645,7 @@ public DataTable ConvertToDataTable<T>(List<T> items)
     }
     return dataTable;
 }
-
+        //vista spa
         public DataTable Spa()
         {
             // Inicializar el DataTable
@@ -839,6 +839,51 @@ public DataTable ConvertToDataTable<T>(List<T> items)
         //}
 
 
+        //Selectservicios
+        public DataTable Servicios()
+        {
+            // Inicializar el DataTable
+            DataTable dt = new DataTable();
+            string url = "http://localhost:8001/Servicios";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = client.PostAsync(url, null).Result;
+                response.EnsureSuccessStatusCode();
+
+                // Leer el contenido de la respuesta
+                string responseBody = response.Content.ReadAsStringAsync().Result;
+
+                // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
+                List<Serv> servicios = JsonConvert.DeserializeObject<List<Serv>>(responseBody);
+
+                // Verificar si la lista es nula o vacía
+                if (servicios == null || !servicios.Any())
+                {
+                    return dt;
+                }
+
+                // Crear las columnas necesarias en el DataTable
+                dt.Columns.Add("ID", typeof(string));
+                dt.Columns.Add("Nombre", typeof(string));
+                dt.Columns.Add("Precio", typeof(decimal));
+
+                // Llenar el DataTable con los datos de la lista
+                foreach (var servicio in servicios)
+                {
+                    dt.Rows.Add(servicio.Id, servicio.Nombre, servicio.Precio);
+                }
+            }
+
+            return dt;
+        }
+        public class Serv
+        {
+            public int Id { get; set; }
+            public string Nombre { get; set; }
+            public decimal Precio { get; set; }
+            // Agregar otras propiedades según la respuesta de la API
+        }
 
 
         //Actividades
