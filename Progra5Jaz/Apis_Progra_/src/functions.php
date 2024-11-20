@@ -590,6 +590,55 @@ function registrar($Ide, $Nombre, $Correo, $Telefono, $Contrasena, $FechaNa, $Vi
      echo($mensajeSalida);
 }
 
+function reservaServicios($Ide,$Servicio,$Fecha,$Hora,$Precio) {
+    $conn = getConnection();
+    if ($conn === false) {
+        return ["success" => false, "error" => "No se pudo establecer la conexión con la base de datos", "details" => sqlsrv_errors()];
+    }
+
+    // La consulta SQL para llamar al procedimiento almacenado
+    $sql = "{CALL Jaz.GestionReservas(?, ?, ?, ?, ?, ?, ?)}";
+
+    // Crear el array de parámetros
+    $mensajeSalida = ''; // Declaración de la variable para el mensaje de salida
+
+    $parameters = [
+        [1, SQLSRV_PARAM_IN],                
+        [$Ide, SQLSRV_PARAM_IN],              
+        [$Servicio, SQLSRV_PARAM_IN],        
+        [$Fecha, SQLSRV_PARAM_IN],       
+        [$Hora, SQLSRV_PARAM_IN],         
+        [$Precio, SQLSRV_PARAM_IN], 
+        ];
+
+    // Ejecutar la consulta
+    $stmt = sqlsrv_query($conn, $sql, $parameters);
+
+    // Verificar si la consulta se ejecutó correctamente
+    if ($stmt === false) {
+        echo "Error al ejecutar la consulta<br>";
+        
+        // Mostrar errores detallados de SQL Server
+        if (($errors = sqlsrv_errors()) != null) {
+            foreach ($errors as $error) {
+                echo "SQLSTATE: " . $error['SQLSTATE'] . "<br />";
+                echo "Code: " . $error['code'] . "<br />";
+                echo "Message: " . $error['message'] . "<br />";
+            }
+        }
+
+        // Cerrar la conexión y salir de la función
+        sqlsrv_close($conn);
+        return ["success" => false, "error" => "Error en la consulta SQL"];
+    }
+
+    // Liberar el recurso solo si la consulta fue exitosa
+    sqlsrv_free_stmt($stmt);
+    sqlsrv_close($conn);
+
+    // Retornar el mensaje de salida
+     echo($mensajeSalida);
+}
 
 function EscribirRH($datos) {
     $conn = getConnection();

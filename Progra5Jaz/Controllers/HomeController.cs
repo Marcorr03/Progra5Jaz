@@ -320,7 +320,7 @@ namespace Progra5Jaz.Controllers
 
         
         public DataTable ObtenerServiciosSelect()
-       {
+        {
             // Llamar al método que obtiene el DataTable
             DataTable servicios = datos.Servicios();
 
@@ -431,10 +431,36 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
-        //Agendar
+        //AgendarServicios
         public ActionResult ReservasServicios()
         {
             ViewBag.Select=ObtenerServiciosSelect();
+           
+
+            if (Request.Form.AllKeys.Contains("Registrar"))
+            {
+                    string Ide = Request.Form["Identificacion"];
+                    string Servicio = Request.Form["Servicio"];
+                    string Fecha = Request.Form["Fecha"];
+                    string Hora = Request.Form["Hora"];
+                    string Precio = Request.Form["Precio"];
+
+
+                        string Mensaje = datos.ReservarServ(Ide, Servicio, Fecha, Hora, Precio);
+                        if (Mensaje == "Tu reserva se proceso correctamente")
+
+                        {
+                            ViewBag.icono = "success";
+                        }
+                        else
+                        {
+                            ViewBag.icono = "error";
+                        }
+                        ViewBag.Message = Mensaje;
+                    }
+                
+
+            
             return View();
         }
 

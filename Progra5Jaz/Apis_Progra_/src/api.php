@@ -152,6 +152,18 @@ switch ($method) {
             $result = registrar($Ide,$Nombre,$Correo,$Telefono,$Contrasena,$FechaNa,$Vigencia,$PalabraClave);
             return $result;
          }  
+         else if ($path == 'reservarServicios') {
+             // Obtener los datos del formulario
+            $Ide= $_POST["dato1"];
+            $Servicio= $_POST["dato2"];
+            $Fecha= $_POST["dato3"];
+            $Hora= $_POST["dato4"];
+            $Precio= $_POST["dato5"];
+                        
+            // Llamar a la función login pasando los datos obtenidos
+            $result = reservaServicios($Ide,$Servicio,$Fecha,$Hora,$Precio);
+            return $result;
+         }  
          
          else if ($path == 'login') {
             // Obtener los datos del formulario

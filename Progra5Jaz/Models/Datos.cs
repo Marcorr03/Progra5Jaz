@@ -909,6 +909,40 @@ public DataTable ConvertToDataTable<T>(List<T> items)
         }
 
 
+
+        public string ReservarServ(string Ide, string Servicio, string Fecha, string Hora, string Precio)
+        {
+            string url = "http://localhost:8001/reservarServicios";
+            string message = "";
+            using (var content = new MultipartFormDataContent())
+            {
+                content.Add(new StringContent(Ide), "dato1");
+                content.Add(new StringContent(Servicio), "dato2");
+                content.Add(new StringContent(Fecha), "dato3");
+                content.Add(new StringContent(Hora), "dato4");
+                content.Add(new StringContent(Precio), "dato5");
+
+                using (HttpClient client = new HttpClient())
+                {
+                    HttpResponseMessage response = client.PostAsync(url, content).Result;
+                    response.EnsureSuccessStatusCode();
+
+                    // Leer el contenido de la respuesta
+                    var responseData = response.Content.ReadAsStringAsync().Result;
+
+                    message = responseData;
+
+                }
+            }
+            return message;
+        }
+
+        public class ServReserv
+        {
+            public string Correo { get; set; }
+            public string Contrasena { get; set; }
+        }
+
         //Actividades
         //Registrar
 
