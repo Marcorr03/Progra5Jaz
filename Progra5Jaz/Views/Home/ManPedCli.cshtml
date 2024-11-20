@@ -97,7 +97,7 @@
                                 <p>@row["Descripcion"]</p>
                                 <h6>Precio: @row["Precio"]/p</h6>
                                 <div style=" display:flex;">
-                                    <a class="agregar" href="~/Home/ReservasServicios"><img width="50" src="~/IMG/agen.png"></a>
+                                    <a class="agregar" href="@Url.Action("ReservasServicios", "Home", new { nombre = row["Nombre"],precio= row["Precio"]})"><img width="50" src="~/IMG/agen.png"></a>
                                 </div>
                             </div>
                         </div>

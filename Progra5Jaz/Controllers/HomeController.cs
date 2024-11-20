@@ -431,8 +431,8 @@ namespace Progra5Jaz.Controllers
             return View();
         }
 
-        //AgendarServicios
-        public ActionResult ReservasServicios()
+        //Agendar
+        public ActionResult ReservasServicios(string nombre, string precio)
         {
             ViewBag.Select=ObtenerServiciosSelect();
            
@@ -461,6 +461,8 @@ namespace Progra5Jaz.Controllers
                 
 
             
+            ViewBag.Nombre = nombre;
+            ViewBag.Precio = precio;
             return View();
         }
 
