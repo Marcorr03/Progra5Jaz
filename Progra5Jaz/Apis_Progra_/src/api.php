@@ -24,6 +24,19 @@ switch ($method) {
                 }
                 
             }
+            // selectservicios
+               else if ($path == 'Servicios') {
+                // Llamar a la función para obtener los servicios
+                $result = obtenerServicios();
+ 
+                // Verificar si la función devolvió datos
+                if ($result["success"]) {
+                    echo json_encode($result["data"]); // Devolver los servicios como JSON
+                } else {
+                    // Devolver un mensaje de error en caso de fallo
+                    echo json_encode($result);
+                }
+        }
             else if($path == 'VerProductos'){
                 $lugares = VerProductos();
                 if ($lugares['success']) {
@@ -222,19 +235,7 @@ switch ($method) {
                 return ["success" => false, "error" => "Faltan parámetros de id"];
             }
         }
-        // selectservicios
-        else if ($path == 'Servicios') {
-                // Llamar a la función para obtener los servicios
-                $result = obtenerServicios();
- 
-                // Verificar si la función devolvió datos
-                if ($result["success"]) {
-                    echo json_encode($result["data"]); // Devolver los servicios como JSON
-                } else {
-                    // Devolver un mensaje de error en caso de fallo
-                    echo json_encode($result);
-                }
-        }
+        
         else if ($path == 'EscribirP') {
             // Obtener los datos del formulario
            $datos = [];

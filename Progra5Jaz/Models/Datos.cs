@@ -18,6 +18,7 @@ using System.Web.Hosting;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Progra5Jaz.Models
 {
@@ -848,35 +849,57 @@ public DataTable ConvertToDataTable<T>(List<T> items)
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = client.PostAsync(url, null).Result;
+                // Cambia PostAsync por GetAsync
+                HttpResponseMessage response = client.GetAsync(url).Result;
                 response.EnsureSuccessStatusCode();
 
                 // Leer el contenido de la respuesta
                 string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                // Deserializar la respuesta JSON a una lista de objetos (ajusta el tipo de objeto según tu JSON)
-                List<Serv> servicios = JsonConvert.DeserializeObject<List<Serv>>(responseBody);
+                // Deserializar la respuesta JSON a una lista de objetos
+                string jsonPattern = @"\[(.*?)\]";
+                Match match = Regex.Match(responseBody, jsonPattern);
 
-                // Verificar si la lista es nula o vacía
-                if (servicios == null || !servicios.Any())
+                if (match.Success)
                 {
-                    return dt;
+                    string validJson = match.Value;
+
+                    try
+                    {
+                        List<Serv> servicios = JsonConvert.DeserializeObject<List<Serv>>(validJson);
+                        // Verificar si la lista es nula o vacía
+                        if (servicios == null || !servicios.Any())
+                        {
+                            return dt;
+                        }
+
+                        // Crear las columnas necesarias en el DataTable
+                        dt.Columns.Add("ID", typeof(string));
+                        dt.Columns.Add("Nombre", typeof(string));
+                        dt.Columns.Add("Precio", typeof(decimal));
+
+                        // Llenar el DataTable con los datos de la lista
+                        foreach (var servicio in servicios)
+                        {
+                            dt.Rows.Add(servicio.Id, servicio.Nombre, servicio.Precio);
+                        }
+                    }
+                    catch (JsonReaderException ex)
+                    {
+                        Console.WriteLine("Error al deserializar el JSON: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontró JSON válido en la respuesta.");
                 }
 
-                // Crear las columnas necesarias en el DataTable
-                dt.Columns.Add("ID", typeof(string));
-                dt.Columns.Add("Nombre", typeof(string));
-                dt.Columns.Add("Precio", typeof(decimal));
-
-                // Llenar el DataTable con los datos de la lista
-                foreach (var servicio in servicios)
-                {
-                    dt.Rows.Add(servicio.Id, servicio.Nombre, servicio.Precio);
-                }
+                
             }
 
             return dt;
         }
+
         public class Serv
         {
             public int Id { get; set; }
