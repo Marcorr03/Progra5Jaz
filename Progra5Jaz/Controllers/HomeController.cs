@@ -432,9 +432,11 @@ namespace Progra5Jaz.Controllers
         }
 
         //Agendar
-        public ActionResult ReservasServicios()
+        public ActionResult ReservasServicios(string nombre)
         {
             ViewBag.Select=ObtenerServiciosSelect();
+
+            ViewBag.Nombre = nombre;
             return View();
         }
 

@@ -53,6 +53,57 @@
                 .catch(error => console.error('Error al cargar servicios:', error));
         }
 
+        function fetchCurrencyExchange() {
+            fetch('http://localhost:8001/ApiBanco')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    var venta = data.Venta[0].Valor;
+                    var compra = data.Compra[0].Valor;
+                    document.getElementById('exchange-rate').textContent = `Venta: ₡${parseFloat(venta).toFixed(2)} Compra: ₡${parseFloat(compra).toFixed(2)}`;
+                })
+                .catch(error => {
+                    console.error('Error al cargar el cambio de moneda:', error);
+                    document.getElementById('exchange-rate').textContent = 'No se pudieron cargar los datos de cambio de moneda';
+                });
+        }
+
+        function capitalizarPrimeraLetra(cadena) {
+            if (cadena.length === 0) {
+                return cadena;
+            }
+            return cadena.charAt(0).toUpperCase() + cadena.slice(1);
+        }
+        function fetchWeather() {
+            fetch('http://localhost:8001/ApiClima')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    var descripcion = data.descripcion;
+                    var temperatura = data.temperatura;
+                    document.getElementById('weather-time').textContent = `${temperatura}°C ${capitalizarPrimeraLetra(descripcion)}`;
+                })
+                .catch(error => {
+                    console.error('Error al cargar el clima:', error);
+                    document.getElementById('weather-info').textContent = 'No se pudieron cargar los datos del clima';
+                });
+        }
+
+
+
+        // Llamar a las funciones para obtener los datos
+        fetchCurrencyExchange();
+        fetchWeather();
+
+
     </script>
 
     <!-- Barra de navegación -->
@@ -84,6 +135,12 @@
         </div>
         <a href="#" class="btn btn-carrito" style="border-radius: 30px;"><img src="~/IMA/menu.png" alt=""></a>
         <a href="#" class="btn btn-carrito"><img src="" alt=""></a>
+
+        <div style="position:fixed; right:10px; top:10px; display:grid">
+            <label id="exchange-rate" class="DoradoL" style="font-size:21px"></label>
+
+            <label id="weather-time" class="DoradoL" style="font-size:21px"></label>
+        </div>
     </nav>
 
     <!-- Encabezado -->
