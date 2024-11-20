@@ -535,7 +535,7 @@ function registrar($Ide, $Nombre, $Correo, $Telefono, $Contrasena, $FechaNa, $Vi
     }
 
     // La consulta SQL para llamar al procedimiento almacenado
-    $sql = "{CALL Jaz.GestionUsuarios(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+    $sql = "{CALL Jaz.GestionUsuarios(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)}";
 
     // Encriptar los valores antes de enviarlos a la consulta (asegúrate de que el resultado esté en formato binario)
     $CorreoEn = encriptar($Correo);
@@ -559,6 +559,7 @@ function registrar($Ide, $Nombre, $Correo, $Telefono, $Contrasena, $FechaNa, $Vi
         [encriptar("Nada"), SQLSRV_PARAM_IN],  // Parámetro adicional de entrada
         [null, SQLSRV_PARAM_IN],              // ContraAntigua
         ["Activo", SQLSRV_PARAM_IN],          // Estado
+        [&$mensajeSalida, SQLSRV_PARAM_OUT] 
         ];
 
     // Ejecutar la consulta
@@ -597,7 +598,7 @@ function reservaServicios($Ide,$Servicio,$Fecha,$Hora,$Precio) {
     }
 
     // La consulta SQL para llamar al procedimiento almacenado
-    $sql = "{CALL Jaz.GestionReservas(?, ?, ?, ?, ?, ?, ?)}";
+    $sql = "{CALL Jaz.GestionReservas(?, ?, ?, ?, ?, ?,? )}";
 
     // Crear el array de parámetros
     $mensajeSalida = ''; // Declaración de la variable para el mensaje de salida
@@ -608,7 +609,8 @@ function reservaServicios($Ide,$Servicio,$Fecha,$Hora,$Precio) {
         [$Servicio, SQLSRV_PARAM_IN],        
         [$Fecha, SQLSRV_PARAM_IN],       
         [$Hora, SQLSRV_PARAM_IN],         
-        [$Precio, SQLSRV_PARAM_IN], 
+        [$Precio, SQLSRV_PARAM_IN] ,
+        [&$mensajeSalida, SQLSRV_PARAM_OUT] 
         ];
 
     // Ejecutar la consulta
