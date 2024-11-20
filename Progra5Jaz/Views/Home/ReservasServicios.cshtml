@@ -98,7 +98,7 @@
                             }
                         }
                     </select>*@
-                    <input type="text" class="form-control" id="Servicio" name="Servicio" placeholder="Servicio" required value="@ViewBag.Nombre">
+                    <input type="text" class="form-control" id="Servicio" name="Servicio" placeholder="Servicio" required value="@ViewBag.Nombre" readonly>
                 </div>
 
 
@@ -114,7 +114,7 @@
 
                 <div class="mb-3">
                     <label for="Precio" class="form-label">Precio</label>
-                    <input type="text" id="Precio" class="form-control" readonly>
+                    <input type="text" id="Precio" class="form-control" value="@ViewBag.Precio" readonly>
                 </div>
                 <br />
                 <br />
